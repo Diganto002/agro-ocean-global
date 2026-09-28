@@ -1,12 +1,14 @@
+import { getAssetUrl } from '../utils/assets';
+
 export const commoditiesData = [
   {
     id: "yellow-split-peas",
     name: "Yellow Split Peas (মটর ও বুটের ডাল)",
-    localName: "আমদানিকৃত বাছাইকৃত বুটের ডাল / মটর ডাল (But / Booter Dal)",
+    localName: "বাছাইকৃত বুটের ডাল / মটর ডাল (But / Booter Dal)",
     category: "peas",
     origin: "চীন (Qingdao/Dalian) ও কানাডা",
     grade: "Grade 1 ডাবল সর্টেক্স পলিশড এক্সপোর্ট গ্রেড",
-    image: "/images/yellow_split_peas.jpg",
+    image: getAssetUrl("images/yellow_split_peas.jpg"),
     badge: "৮০% চীন ও কানাডা ইমপোর্ট",
     featured: true,
     basePriceFOB: 365,
@@ -28,7 +30,7 @@ export const commoditiesData = [
     ],
     incotermsSupported: ["CIF চট্টগ্রাম বন্দর (CPA)", "CIF মোংলা", "বেনাপোল ডেলিভারি", "FOB গুয়াংজু / কিংদাও"],
     minOrderQuantity: 25,
-    description: "খাতুনগঞ্জ ও সারাদেশের ডাল মিল এবং পাইকারি আড়তদারদের প্রধান পছন্দ। চীন ও কানাডার আধুনিক প্রযুক্তিতে পরিশোধিত ও ডাবল সর্টেক্স পলিশকৃত উজ্জ্বল হলুদ বুটের ডাল। দ্রুত সিদ্ধ হওয়া ও সেরা ক্রিমের টেক্সচারের জন্য সুপরিচিত।",
+    description: "Zentra Trade-এর অন্যতম শীর্ষ বিক্রিত পণ্য। খাতুনগঞ্জ ও সারাদেশের ডাল মিল এবং পাইকারি আড়তদারদের প্রধান পছন্দ। চীন ও কানাডার আধুনিক প্রযুক্তিতে পরিশোধিত ও ডাবল সর্টেক্স পলিশকৃত উজ্জ্বল হলুদ বুটের ডাল।",
     testCertificates: ["SGS ল্যাব টেস্ট ও পিউরিটি সার্টিফিকেট", "জাতীয় উদ্ভিদ সংগনিরোধ (NPPO) ছাড়পত্র", "নন-জিএমও (Non-GMO) ভেরিফিকেশন", "রেডিয়েশন-মুক্ত প্রত্যয়নপত্র"]
   },
   {
@@ -38,7 +40,7 @@ export const commoditiesData = [
     category: "chickpeas",
     origin: "অস্ট্রেলিয়া, ভারত ও আঞ্চলিক হাব",
     grade: "মেশিন ক্লিনড ৯৯% পিউরিটি (Farmer Dressed)",
-    image: "/images/chickpeas.jpg",
+    image: getAssetUrl("images/chickpeas.jpg"),
     badge: "রমজান ও সারা বছরের ফাস্ট-সেলার",
     featured: true,
     basePriceFOB: 680,
@@ -69,7 +71,7 @@ export const commoditiesData = [
     category: "beans",
     origin: "চীন (Heilongjiang & Dalian)",
     grade: "সুপার হ্যান্ড-পিকড (HPS) এক্সপোর্ট স্ট্যান্ডার্ড",
-    image: "/images/yellow_split_peas.jpg",
+    image: getAssetUrl("images/yellow_split_peas.jpg"),
     badge: "সরাসরি চীন থেকে আমদানি",
     featured: true,
     basePriceFOB: 820,
@@ -89,7 +91,7 @@ export const commoditiesData = [
     ],
     incotermsSupported: ["CIF চট্টগ্রাম", "CIF মোংলা", "FOB দালিয়ান / কিংদাও"],
     minOrderQuantity: 25,
-    description: "সরাসরি চীনের হেইলংজিয়াং প্রদেশ থেকে বাল্ক আমদানি। হোটেল-রেস্তোরাঁ সাপ্লাই, প্রক্রিয়াজাত খাদ্য শিল্প এবং প্রিমিয়াম খাদ্য পণ্যের জন্য উচ্চ চাহিদাসম্পন্ন সাদা বিনস।",
+    description: "সরাসরি চীনের হেইলংজিয়াং প্রদেশ থেকে বাল্ক আমদানি। Zentra Trade-এর মাধ্যমে শীর্ষস্থানীয় ক্যানার ও পাইকারি ক্রেতাদের মাঝে দ্রুত সরবরাহ।",
     testCertificates: ["CCIC / CIQ চায়না সরকারি পরিদর্শন", "SGS কোয়ালিটি সার্টিফিকেট", "বাংলাদেশ প্ল্যান্ট কোয়ারেন্টাইন সার্টিফিকেট"]
   },
   {
@@ -99,7 +101,7 @@ export const commoditiesData = [
     category: "lentils",
     origin: "কানাডা, ভারত ও অস্ট্রেলিয়া",
     grade: "Grade 1 সর্টেক্স ০.৫% ম্যাক্স ডিফেক্ট",
-    image: "/images/red_lentils.jpg",
+    image: getAssetUrl("images/red_lentils.jpg"),
     badge: "দৈনন্দিন ভলিউম লিডার",
     featured: true,
     basePriceFOB: 620,
@@ -130,7 +132,7 @@ export const commoditiesData = [
     category: "beans",
     origin: "মিয়ানমার (ইয়াঙ্গুন), চীন ও ভারত",
     grade: "স্পেশাল মেশিন ক্লিনড ৩.৫ মিমি+",
-    image: "/images/mung_beans.jpg",
+    image: getAssetUrl("images/mung_beans.jpg"),
     badge: "৯৫%+ অঙ্কুরোদগম হার",
     featured: false,
     basePriceFOB: 780,
@@ -160,7 +162,7 @@ export const commoditiesData = [
     category: "export",
     origin: "বাংলাদেশ (যশোর, কুষ্টিয়া ও ফরিদপুর বেল্ট)",
     grade: "এক্সপোর্ট গ্রেড ৯৯.৫% পিউরিটি (চীন স্পেসিফিকেশন)",
-    image: "/images/chickpeas.jpg",
+    image: getAssetUrl("images/chickpeas.jpg"),
     badge: "চীনে বড় ভলিউম এক্সপোর্ট",
     featured: false,
     basePriceFOB: 1150,
@@ -180,7 +182,7 @@ export const commoditiesData = [
     ],
     incotermsSupported: ["FOB চট্টগ্রাম বন্দর", "CIF কিংদাও (Qingdao)", "CIF গুয়াংজু (China)"],
     minOrderQuantity: 20,
-    description: "চীন ও আন্তর্জাতিক বাজারে বাংলাদেশের অন্যতম প্রধান কৃষি রপ্তানি পণ্য। চীনের তিল তেল ও খাদ্য প্রক্রিয়াজাতকরণ ফ্যাক্টরির জন্য নির্ধারিত স্পেসিফিকেশনে শতভাগ সর্টেক্স ক্লিনড তিল সরবরাহ।",
+    description: "Zentra Trade-এর বিশেষায়িত আন্তর্জাতিক রপ্তানি শাখা। চীনের তিল তেল ও খাদ্য প্রক্রিয়াজাতকরণ ফ্যাক্টরির জন্য নির্ধারিত স্পেসিফিকেশনে শতভাগ সর্টেক্স ক্লিনড তিল সরবরাহ।",
     testCertificates: ["EPB বাংলাদেশ রপ্তানি উন্নয়ন ব্যুরো অনুমোদন", "SGS প্রাক-রপ্তানি কোয়ালিটি সার্টিফিকেট", "চীন শুল্ক ও কোয়ারেন্টাইন কমপ্লায়েন্স"]
   }
 ];

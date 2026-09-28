@@ -13,7 +13,8 @@ import {
   Compass,
   Layers,
   Sparkles,
-  Building2
+  Building2,
+  Boxes
 } from 'lucide-react';
 import { currencies } from '../data/marketRates';
 
@@ -46,23 +47,23 @@ export default function Navbar({
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-[#070B18]/92 backdrop-blur-md border-b border-agro-gold-500/20 py-2.5 shadow-2xl shadow-black/50' 
+        ? 'bg-[#070B18]/94 backdrop-blur-md border-b border-agro-gold-500/20 py-2.5 shadow-2xl shadow-black/60' 
         : 'bg-transparent py-4 border-b border-white/5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo with Bangladesh identity */}
+          {/* Brand Logo for ZENTRA TRADE */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-agro-gold-500 via-agro-amber-600 to-agro-navy-900 p-0.5 shadow-lg shadow-agro-gold-500/20 group-hover:shadow-agro-gold-500/40 transition-all">
-              <div className="w-full h-full bg-[#0B132B] rounded-[10px] flex items-center justify-center">
-                <Anchor className="w-5 h-5 text-agro-gold-400 group-hover:rotate-12 transition-transform duration-300" />
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-agro-gold-500 via-amber-500 to-agro-navy-900 p-0.5 shadow-lg shadow-agro-gold-500/25 group-hover:shadow-agro-gold-500/50 transition-all">
+              <div className="w-full h-full bg-[#0B132B] rounded-[10px] flex items-center justify-center font-display font-black text-lg text-agro-gold-400 group-hover:scale-105 transition-transform">
+                Z
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-display font-black tracking-wider text-xl text-white">
-                  AGRO<span className="text-agro-gold-400">OCEAN</span>
+                  ZENTRA <span className="text-agro-gold-400">TRADE</span>
                 </span>
                 <span className="text-[10px] tracking-widest uppercase font-bold px-1.5 py-0.5 rounded bg-agro-emerald-500/20 text-emerald-400 border border-emerald-500/30">
                   BANGLADESH

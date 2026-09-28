@@ -13,6 +13,7 @@ import {
   ExternalLink,
   ChevronRight
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export default function QualityAssurance() {
   const [activeTab, setActiveTab] = useState('sgs');
@@ -20,96 +21,96 @@ export default function QualityAssurance() {
   const supplyChainSteps = [
     {
       step: "01",
-      title: "Origin & Farmgate Assay",
-      desc: "Raw pulses sampled at prairie elevators in Saskatchewan (Canada) and Queensland (Australia). Moisture tested below 12.0%.",
+      title: "চীন ও আন্তর্জাতিক অরিজিন টেস্টিং",
+      desc: "চীনের কিংদাও, গুয়াংজু এবং কানাডা/অস্ট্রেলিয়ার সাইলোতে ময়েশ্চার, পিউরিটি ও অপটিক্যাল কোয়ালিটি ল্যাব টেস্ট।",
       icon: Microscope,
-      badge: "Pre-Clean Purity"
+      badge: "প্রাক-জাহাজীকরণ পিউরিটি"
     },
     {
       step: "02",
-      title: "Optical Sortex & Calibration",
-      desc: "Double Bühler Sortex optical sorting eliminates discolored grains, foreign matter (<0.2%), and calibrates seed diameter to precision.",
+      title: "অপটিক্যাল সর্টেক্স ও ক্যালিবার সাইজিং",
+      desc: "ডাবল অপটিক্যাল সর্টেক্সের মাধ্যমে অপুষ্ট দানা ও অপদ্রব্য (<০.২%) দূর করে নিখুঁত সম-আকারের খাদ্যশস্য বাছাই।",
       icon: CheckSquare,
-      badge: "Sortex 99.5%"
+      badge: "সর্টেক্স ৯৯.৫%"
     },
     {
       step: "03",
-      title: "Fumigation & Port Loading",
-      desc: "Methyl Bromide phytosanitary fumigation in accordance with NPPO & Bangladesh plant quarantine standards. SGS seal attached.",
+      title: "ফিউমিগেশন ও কনটেইনার লোডিং",
+      desc: "আন্তর্জাতিক ও বাংলাদেশ উদ্ভিদ সংগনিরোধ (NPPO) নীতিমালায় মিথাইল ব্রোমাইড ফিউমিগেশন ও SGS সিল সংযুক্তিকরণ।",
       icon: Ship,
-      badge: "Insect-Free Cert"
+      badge: "কীটমুক্ত ছাড়পত্র"
     },
     {
       step: "04",
-      title: "Maritime Hold Telemetry",
-      desc: "Continuous ventilation monitoring during 18-28 day voyages prevents humidity buildup, mold germination, and cargo sweat.",
+      title: "জাহাজের হোল্ড টেলিমেট্রি মনিটরিং",
+      desc: "চীন থেকে চট্টগ্রাম ১০-১২ দিনের সমুদ্রযাত্রায় সার্বক্ষণিক হোল্ডের তাপমাত্রা ও আর্দ্রতা নজরদারি।",
       icon: ShieldCheck,
-      badge: "Telemetry Guard"
+      badge: "টেলিমেট্রি গার্ড"
     },
     {
       step: "05",
-      title: "CPA Customs & Berth Offload",
-      desc: "Pre-arrival customs documentation ensures fast-track clearance at Chittagong Port Authority (CPA) berths within 36-48 hours.",
+      title: "চট্টগ্রাম ও মোংলা বন্দরে খালাস",
+      desc: "প্রাক-আগমন কাস্টমস কাগজপত্রের মাধ্যমে চট্টগ্রাম বন্দরের বহির্নোঙ্গর ও জেটিতে দ্রুততম সময়ে খালাস।",
       icon: Building2,
-      badge: "Priority Berth"
+      badge: "অগ্রাধিকার বার্থিং"
     },
     {
       step: "06",
-      title: "Direct Dal Mill Delivery",
-      desc: "Bulk container discharge or 50kg bagging transferred directly to buyer silos, bonded warehouses, or nationwide mill yards.",
+      title: "খাতুনগঞ্জ ও ডাল মিল সরাসরি ডেলিভারি",
+      desc: "বাল্ক লাইনার বা ৫০ কেজির নতুন বস্তায় সরাসরি ক্রেতার গুদাম বা ডাল মিল প্রাঙ্গণে স্থানান্তর।",
       icon: Truck,
-      badge: "Mill Handover"
+      badge: "গেট ডেলিভারি"
     }
   ];
 
   const certificates = {
     sgs: {
-      name: "SGS Agricultural Testing & Inspection",
-      authority: "SGS Société Générale de Surveillance (Geneva)",
-      scope: "Pre-shipment verification of protein content, moisture percentage, foreign matter count, and container tare/gross weight.",
+      name: "SGS আন্তর্জাতিক কৃষি ও খাদ্যশস্য পরিদর্শন সনদ",
+      authority: "SGS Société Générale de Surveillance (Geneva & Guangzhou Bureau)",
+      scope: "চীন ও আন্তর্জাতিক বন্দরে জাহাজে বোঝাইয়ের পূর্বে প্রোটিন, আর্দ্রতা এবং ব্যাগের নিখুঁত গ্রস/নেট ওজন যাচাই।",
       parameters: [
-        { label: "Purity Grade", value: "99.5% Minimum" },
-        { label: "Max Moisture Content", value: "12.0% Maximum" },
-        { label: "Foreign Material", value: "Less than 0.20%" },
-        { label: "Sample Batch Size", value: "Random 100-Point Composite Sampling" }
+        { label: "বিশুদ্ধতার মাত্রা (Purity)", value: "৯৯.৫% সর্বনিম্ন" },
+        { label: "সর্বোচ্চ আর্দ্রতা (Max Moisture)", value: "১২.০% বা তার কম" },
+        { label: "অপদ্রব্য (Foreign Matter)", value: "০.২০% এর নিচে" },
+        { label: "নমুনা পরীক্ষা", value: "র‍্যান্ডম কম্পোজিট ল্যাব অ্যাসে" }
       ],
-      complianceCode: "SGS-AGRO-CERT-2026-X89"
+      complianceCode: "SGS-ZENTRA-CERT-2026-BD"
     },
     bv: {
-      name: "Bureau Veritas Quality & Weight Certificate",
-      authority: "Bureau Veritas Agri-Commodities Division",
-      scope: "Official independent survey of bulk vessel draft surveys, hold hygiene inspection, and hatch sealing before sailing.",
+      name: "Bureau Veritas ও CCIC গুণগত মান সনদ",
+      authority: "Bureau Veritas Agri & China Inspection and Quarantine (CIQ)",
+      scope: "জাহাজের হোল্ডের খাদ্য-উপযোগী পরিচ্ছন্নতা, ড্রাফট সার্ভে এবং পানিরোধক হ্যাচ সিল নিশ্চিতকরণ।",
       parameters: [
-        { label: "Hold Cleanliness", value: "Certified Food-Grade Clean" },
-        { label: "Draft Survey Accuracy", value: "±0.1% Metric Ton Certified" },
-        { label: "Marine Insurance Survey", value: "Lloyd's Standard Covered" },
-        { label: "Temperature Log", value: "Calibrated Digital Data Loggers" }
+        { label: "হোল্ড হাইজিন", value: "সার্টিফাইড ফুড-গ্রেড ক্লিন" },
+        { label: "ড্রাফট সার্ভে নির্ভুলতা", value: "±০.১% মেট্রিক টন সার্টিফাইড" },
+        { label: "মেরিন কার্গো কভার", value: "লয়েডস লন্ডন স্ট্যান্ডার্ড" },
+        { label: "ডিজিটাল ডেটা লগ", value: "ক্যালিব্রেটেড টেম্পারেচার ট্র্যাকার" }
       ],
-      complianceCode: "BV-MARITIME-8891-B"
+      complianceCode: "BV-ZENTRA-8891-CN"
     },
     phyto: {
-      name: "Phytosanitary & Plant Quarantine Clearance",
-      authority: "National Plant Protection Organization (NPPO / CFIA / DAFF)",
-      scope: "Mandatory official government clearance certifying consignments free from quarantine pests, weed seeds, and pathogens.",
+      name: "উদ্ভিদ সংগনিরোধ ও স্বাস্থ্য সুরক্ষা ছাড়পত্র (Phyto)",
+      authority: "জাতীয় উদ্ভিদ সংগনিরোধ উইং (খামারবাড়ি, ঢাকা ও CIQ চীন)",
+      scope: "বাংলাদেশ আমদানি নীতি অনুযায়ী ক্ষতিকারক পোকামাকড়, আগাছা বীজ ও রোগজীবাণুমুক্ত সার্টিফিকেট।",
       parameters: [
-        { label: "Fumigation Agent", value: "Methyl Bromide (CH3Br) / Phosphine" },
-        { label: "Exposure Period", value: "48 Hours at 21°C" },
-        { label: "Quarantine Pest Status", value: "100% Free / Non-Detected" },
-        { label: "Import Permit Alignment", value: "Compliant with Bangladesh Plant Quarantine Act" }
+        { label: "ফিউমিগেশন এজেন্ট", value: "মিথাইল ব্রোমাইড (CH3Br) / ফসফিন" },
+        { label: "এক্সপোজার সময়", value: "৪৮ ঘণ্টা ২১°C তাপমাত্রায়" },
+        { label: "কোয়ারেন্টাইন পেস্ট স্ট্যাটাস", value: "১০০% কীটমুক্ত ও ফ্রেশ" },
+        { label: "আইপি অনুমোদন", value: "বাংলাদেশ উদ্ভিদ সংগনিরোধ আইন সংগতিপূর্ণ" }
       ],
-      complianceCode: "NPPO-EXP-PHYTO-99214"
+      complianceCode: "NPPO-BD-ZENTRA-99214"
     },
     gafta: {
-      name: "GAFTA (Grain & Feed Trade Association)",
+      name: "GAFTA আন্তর্জাতিক শস্য বাণিজ্য স্ট্যান্ডার্ড",
       authority: "GAFTA Approved Superintendent & Analyst",
-      scope: "Contract compliance under standard GAFTA Contract No. 88 & 122 for international pulses and bulk grain trade.",
+      scope: "আন্তর্জাতিক খাদ্যশস্য বাণিজ্য চুক্তি GAFTA Contract No. 88 ও 124 এর অধীনে বিরোধহীন নিষ্পত্তি ও ডেলিভারি।",
       parameters: [
-        { label: "Contract Standard", value: "GAFTA Form 88 & 124" },
-        { label: "Dispute Arbitration", value: "GAFTA London International Board" },
-        { label: "Trade Assurance", value: "Approved Trade Supplier Status" },
-        { label: "Sampling Standard", value: "GAFTA 124 Standard Methods" }
+        { label: "চুক্তি স্ট্যান্ডার্ড", value: "GAFTA Form 88 & 124" },
+        { label: "সালিশি বিধি", value: "GAFTA লন্ডন আন্তর্জাতিক বোর্ড" },
+        { label: "ট্রেড অ্যাসুরেন্স", value: "অনুমোদিত আন্তর্জাতিক সাপ্লায়ার" },
+        { label: "স্যাম্পলিং বিধি", value: "GAFTA 124 অফিসিয়াল স্ট্যান্ডার্ড" }
       ],
-      complianceCode: "GAFTA-MEMBER-T9981"
+      complianceCode: "GAFTA-ZENTRA-T9981"
     }
   };
 
@@ -127,20 +128,20 @@ export default function QualityAssurance() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-widest mb-4">
             <Award className="w-3.5 h-3.5" />
-            <span>Industrial Quality Assurance</span>
+            <span>Zentra Trade গুণগত মান নিয়ন্ত্রণ</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
-            Rigorous Sourcing & <span className="text-emerald-400">SGS Quality Protocol</span>
+            কঠোর মাননিয়ন্ত্রণ ও <span className="text-emerald-400">SGS ল্যাব পরিদর্শন প্রটোকল</span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-3">
-            From Canadian and Australian farm elevators to Chittagong port silos, every metric ton is inspected, laboratory certified, and monitored.
+            চীন ও আন্তর্জাতিক ফার্মগেট থেকে চট্টগ্রাম বন্দর হয়ে খাতুনগঞ্জ আড়ত পর্যন্ত প্রতিটি চালানের রাসায়নিক ও পুষ্টিগুণ পরীক্ষিত।
           </p>
         </div>
 
         {/* 6-Step Visual Timeline of the Supply Chain Journey */}
         <div className="mb-20">
           <h3 className="text-xs font-bold uppercase tracking-wider text-agro-gold-400 mb-6 text-center">
-            The Supply Chain Journey: From Harvest to Delivery
+            Zentra Trade সাপ্লাই চেইন জার্নি: উৎস থেকে আপনার গুদামে
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -185,18 +186,18 @@ export default function QualityAssurance() {
           <div className="lg:col-span-5 relative">
             <div className="rounded-3xl overflow-hidden border border-emerald-500/30 shadow-2xl relative group">
               <img 
-                src="/images/qa_inspection.jpg" 
-                alt="Agricultural commodity testing laboratory moisture analyzer"
+                src={getAssetUrl("images/qa_inspection.jpg")} 
+                alt="Zentra Trade কৃষি খাদ্যশস্য টেস্টিং ল্যাবরেটরি"
                 className="w-full h-[400px] object-cover object-center group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070B18] via-transparent to-black/20" />
               <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl bg-agro-navy-950/90 backdrop-blur-md border border-white/10 text-xs">
                 <div className="flex items-center justify-between">
-                  <span className="font-bold text-white">Accredited Laboratory Testing</span>
+                  <span className="font-bold text-white">স্বীকৃত আন্তর্জাতিক ল্যাব পরীক্ষা</span>
                   <span className="text-emerald-400 font-mono font-bold">ISO/IEC 17025</span>
                 </div>
                 <p className="text-[11px] text-slate-300 mt-1">
-                  Composite grain moisture analyzer, optical density assays, and non-GMO purity certification.
+                  কম্পোজিট গ্রেইন ময়েশ্চার অ্যানালাইজার, অপটিক্যাল ডেনসিটি ও শতভাগ নন-জিএমও বিশুদ্ধতা নিশ্চিতকরণ।
                 </p>
               </div>
             </div>
@@ -215,7 +216,7 @@ export default function QualityAssurance() {
                     : 'text-slate-400 hover:text-white bg-slate-900/60'
                 }`}
               >
-                SGS Inspection
+                SGS ইন্সপেকশন
               </button>
               <button
                 onClick={() => setActiveTab('bv')}
@@ -225,7 +226,7 @@ export default function QualityAssurance() {
                     : 'text-slate-400 hover:text-white bg-slate-900/60'
                 }`}
               >
-                Bureau Veritas
+                Bureau Veritas & CIQ
               </button>
               <button
                 onClick={() => setActiveTab('phyto')}
@@ -235,7 +236,7 @@ export default function QualityAssurance() {
                     : 'text-slate-400 hover:text-white bg-slate-900/60'
                 }`}
               >
-                Phytosanitary Clearance
+                উদ্ভিদ সংগনিরোধ (Phyto)
               </button>
               <button
                 onClick={() => setActiveTab('gafta')}
@@ -245,7 +246,7 @@ export default function QualityAssurance() {
                     : 'text-slate-400 hover:text-white bg-slate-900/60'
                 }`}
               >
-                GAFTA Trade Rules
+                GAFTA ট্রেড রুলস
               </button>
             </div>
 
@@ -254,7 +255,7 @@ export default function QualityAssurance() {
               
               <div>
                 <span className="text-[10px] uppercase font-bold text-emerald-400 tracking-wider">
-                  Accredited Certification Authority
+                  সনদ প্রদানকারী আন্তর্জাতিক কর্তৃপক্ষ
                 </span>
                 <h4 className="font-display font-bold text-xl text-white mt-0.5">
                   {activeCert.name}
@@ -280,12 +281,12 @@ export default function QualityAssurance() {
               {/* Certificate Verification Code */}
               <div className="p-3 rounded-2xl bg-agro-navy-950 border border-slate-800 flex items-center justify-between text-xs">
                 <div>
-                  <span className="text-slate-500 text-[10px] block">Standard Verification ID:</span>
+                  <span className="text-slate-500 text-[10px] block">ভেরিফিকেশন ট্র্যাকিং আইডি:</span>
                   <span className="font-mono font-bold text-agro-gold-400">{activeCert.complianceCode}</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-emerald-400 font-semibold text-[11px]">
                   <CheckCircle className="w-4 h-4" />
-                  <span>Verified Clean</span>
+                  <span>ক্লিন ভেরিফাইড</span>
                 </div>
               </div>
 

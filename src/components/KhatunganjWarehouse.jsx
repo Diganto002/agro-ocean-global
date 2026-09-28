@@ -11,6 +11,7 @@ import {
   Clock,
   ArrowRight
 } from 'lucide-react';
+import { getAssetUrl } from '../utils/assets';
 
 export default function KhatunganjWarehouse({ onOpenRFQ }) {
   return (
@@ -27,8 +28,8 @@ export default function KhatunganjWarehouse({ onOpenRFQ }) {
           <div className="lg:col-span-6 relative">
             <div className="rounded-3xl overflow-hidden border-2 border-agro-gold-500/40 shadow-2xl relative group">
               <img 
-                src="/images/khatunganj_warehouse.jpg" 
-                alt="খাতুনগঞ্জ পাইকারি আড়ত ও আধুনিক ডাল ওয়্যারহাউস"
+                src={getAssetUrl("images/khatunganj_warehouse.jpg")} 
+                alt="Zentra Trade খাতুনগঞ্জ পাইকারি আড়ত ও আধুনিক ডাল ওয়্যারহাউস"
                 className="w-full h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#070B18] via-transparent to-black/30" />
@@ -37,7 +38,7 @@ export default function KhatunganjWarehouse({ onOpenRFQ }) {
               <div className="absolute top-4 left-4">
                 <span className="px-3.5 py-1.5 rounded-xl bg-agro-navy-950/90 text-agro-gold-300 border border-agro-gold-500/40 text-xs font-bold shadow-lg flex items-center gap-2">
                   <MapPin className="w-3.5 h-3.5 text-agro-gold-400" />
-                  <span>খাতুনগঞ্জ আড়ত ও ওয়্যারহাউস কমপ্লেক্স, চট্টগ্রাম</span>
+                  <span>Zentra Trade • খাতুনগঞ্জ আড়ত ও ওয়্যারহাউস কমপ্লেক্স, চট্টগ্রাম</span>
                 </span>
               </div>
 
@@ -63,14 +64,14 @@ export default function KhatunganjWarehouse({ onOpenRFQ }) {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-agro-gold-500/10 border border-agro-gold-500/30 text-agro-gold-400 text-xs font-bold uppercase tracking-widest mb-3">
                 <Building2 className="w-3.5 h-3.5" />
-                <span>দেশের বৃহত্তম পাইকারি বাণিজ্য নেটওয়ার্ক</span>
+                <span>Zentra Trade পাইকারি বাণিজ্য নেটওয়ার্ক</span>
               </div>
               <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
                 খাতুনগঞ্জ, মৌলভীবাজার ও <br />
                 <span className="text-agro-gold-400">দেশব্যাপী ডাল মিলগুলোতে</span> সরাসরি ডেলিভারি
               </h2>
               <p className="text-slate-300 text-sm mt-3 leading-relaxed">
-                আমরা শুধু সাগরপথে জাহাজ আনি না—চট্টগ্রাম বন্দরের বহির্নোঙ্গর ও জেটি থেকে সরাসরি নিজস্ব ট্রাকে করে খাতুনগঞ্জের আড়ত, ঢাকার মৌলভীবাজার ও সারা দেশের অটো ডাল মিলগুলোর ফ্যাক্টরি সাইলোতে খাদ্যপণ্য পৌঁছে দিই।
+                Zentra Trade শুধু সাগরপথে জাহাজ আমদানি করে না—চট্টগ্রাম বন্দরের বহির্নোঙ্গর ও জেটি থেকে সরাসরি নিজস্ব ট্রাকে করে খাতুনগঞ্জের আড়ত, ঢাকার মৌলভীবাজার ও সারা দেশের অটো ডাল মিলগুলোর ফ্যাক্টরি সাইলোতে খাদ্যপণ্য পৌঁছে দেয়।
               </p>
             </div>
 

@@ -25,14 +25,14 @@ export default function CatalogModal({ isOpen, onClose }) {
           <div>
             <div className="flex items-center gap-2">
               <h3 className="font-display font-black text-2xl text-white">
-                2026 Bulk Pulses & Grains Crop Specification Dossier
+                ZENTRA TRADE • ২০২৬ বাল্ক ডাল ও শস্যদানা স্পেক শিট
               </h3>
               <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
-                Official
+                অফিসিয়াল
               </span>
             </div>
             <p className="text-xs text-slate-400">
-              Laboratory Grading Standard for Industrial Dal Mills, Canners & Importers (Bangladesh CPA & Mongla)
+              খাতুনগঞ্জ পাইকারি আড়তদার ও ডাল মিল মালিকদের জন্য অফিসিয়াল ল্যাবরেটরি স্পেসিফিকেশন
             </p>
           </div>
         </div>
@@ -42,9 +42,9 @@ export default function CatalogModal({ isOpen, onClose }) {
           
           <div className="p-4 rounded-2xl bg-agro-navy-950 border border-slate-800 flex items-center justify-between">
             <div>
-              <p className="font-bold text-white text-sm">International Inspection Standards Enforced</p>
+              <p className="font-bold text-white text-sm">আন্তর্জাতিক ও বাংলাদেশ সংগনিরোধ মানদণ্ড কার্যকর</p>
               <p className="text-slate-400 text-xs mt-0.5">
-                All bulk pulse parcels governed by Canadian Grain Commission (CGC), Pulse Australia Standards & GAFTA 124.
+                সকল বাল্ক কার্গো CIQ চায়না, Canadian Grain Commission (CGC) ও GAFTA 124 নিয়ম অনুযায়ী পরীক্ষিত।
               </p>
             </div>
             <ShieldCheck className="w-8 h-8 text-emerald-400 flex-shrink-0" />
@@ -55,13 +55,13 @@ export default function CatalogModal({ isOpen, onClose }) {
             <table className="w-full text-left border-collapse">
               <thead>
                 <tr className="border-b border-slate-800 bg-slate-900/80 text-[11px] font-bold uppercase text-agro-gold-400 tracking-wider">
-                  <th className="p-3">Commodity & Grade</th>
-                  <th className="p-3">Origin</th>
-                  <th className="p-3">Purity %</th>
-                  <th className="p-3">Max Moisture</th>
-                  <th className="p-3">Foreign Matter</th>
-                  <th className="p-3">Protein %</th>
-                  <th className="p-3">Packaging Options</th>
+                  <th className="p-3">পণ্য ও গ্রেড</th>
+                  <th className="p-3">উৎস</th>
+                  <th className="p-3">পিউরিটি %</th>
+                  <th className="p-3">সর্বোচ্চ আর্দ্রতা</th>
+                  <th className="p-3">অপদ্রব্য</th>
+                  <th className="p-3">প্রোটিন %</th>
+                  <th className="p-3">প্যাকেজিং</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-800 text-xs font-medium">
@@ -90,26 +90,25 @@ export default function CatalogModal({ isOpen, onClose }) {
             <div className="p-4 rounded-2xl bg-[#0B142B] border border-slate-800">
               <h4 className="font-bold text-sm text-white mb-2 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Specialized Yellow Split Peas Milling Performance</span>
+                <span>বুটের ডাল মিলিং পারফরম্যান্স ও ফলন</span>
               </h4>
               <ul className="space-y-1.5 text-xs text-slate-400">
-                <li>• Milling recovery yield: 84% - 87% clean unblemished dal halves.</li>
-                <li>• Uniform cooking time: 24 to 28 minutes without chemical tenderizers.</li>
-                <li>• Low starch gelatinization temperature for industrial batter and snack extrusion.</li>
-                <li>• Naturally non-GMO, grown in high-latitude Saskatchewan soils.</li>
+                <li>• মিলিং রিকভারি রেট: ৮৪% - ৮৭% নিখুঁত ডাল প্রাপ্তি।</li>
+                <li>• সমমানের রন্ধন সময়: ২৪ থেকে ২৮ মিনিটে নরম ও সুস্বাদু ক্রিমি টেক্সচার।</li>
+                <li>• চানাচুর ও ডালমুট কারখানার জন্য আদর্শ কম-আর্দ্রতাযুক্ত দানার গঠন।</li>
+                <li>• রাসায়নিক রঙমুক্ত এবং শতভাগ প্রাকৃতিকভাবে সর্টেক্স পলিশড।</li>
               </ul>
             </div>
 
             <div className="p-4 rounded-2xl bg-[#0B142B] border border-slate-800">
               <h4 className="font-bold text-sm text-white mb-2 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Desi & Kabuli Chickpeas Caliber Consistency</span>
+                <span>ছোলা ও চীনা বিনস ক্যালিবার সাইজিং</span>
               </h4>
               <ul className="space-y-1.5 text-xs text-slate-400">
-                <li>• Sieve-screened sizing ensures consistent boiling and high water absorption.</li>
-                <li>• Certified free from live weevils, bruchids, or internal insect infestation.</li>
-                <li>• Rigorous sortex optical scanning removes dark-eyed and shriveled grains.</li>
-                <li>• High shelf-life stability under tropical storage conditions (12+ months).</li>
+                <li>• নিখুঁত সিভ-স্ক্রিনড সাইজিং যার ফলে পানিতে ভেজালে সমহারে ফুলে ওঠে।</li>
+                <li>• ক্ষতিকর উইভিল বা অভ্যন্তরীণ পোকা আক্রমণ মুক্ত সার্টিফাইড।</li>
+                <li>• গ্রীষ্মমন্ডলীয় গুদামজাতকরণে দীর্ঘস্থায়ী শেলফ-লাইফ (১২+ মাস ফ্রেশ)।</li>
               </ul>
             </div>
           </div>
@@ -123,16 +122,15 @@ export default function CatalogModal({ isOpen, onClose }) {
             className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-colors"
           >
             <Printer className="w-4 h-4 text-agro-gold-400" />
-            <span>Print Specification Sheet</span>
+            <span>প্রিন্ট স্পেসিফিকেশন</span>
           </button>
 
           <button
             onClick={() => {
-              // Simulated instant file download
               const element = document.createElement("a");
               const file = new Blob([JSON.stringify(commoditiesData, null, 2)], {type: 'application/json'});
               element.href = URL.createObjectURL(file);
-              element.download = "AGRO_OCEAN_2026_Commodity_Specs.json";
+              element.download = "ZENTRA_TRADE_2026_Commodity_Specs.json";
               document.body.appendChild(element);
               element.click();
               document.body.removeChild(element);
@@ -140,7 +138,7 @@ export default function CatalogModal({ isOpen, onClose }) {
             className="px-6 py-2.5 rounded-xl bg-agro-gold-500 hover:bg-agro-gold-400 text-agro-navy-950 font-bold text-xs shadow-lg transition-colors flex items-center gap-2"
           >
             <Download className="w-4 h-4" />
-            <span>Download Crop Specs (.PDF / Data)</span>
+            <span>ডাউনলোড ক্রপ স্পেক শিট (.JSON / Data)</span>
           </button>
         </div>
 

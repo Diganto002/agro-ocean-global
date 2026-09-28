@@ -32,16 +32,16 @@ export default function RFQModal({
 
   // Form State
   const [formData, setFormData] = useState({
-    commodity: 'Canadian Yellow Split Peas',
+    commodity: 'Yellow Split Peas (মটর ও বুটের ডাল)',
     volumeMT: 500,
     incoterm: 'CIF',
-    destinationPort: 'Chittagong Port Authority (CPA)',
-    packaging: '50 kg Woven PP Bags with Inner Liner',
-    paymentTerm: '100% Irrevocable Letter of Credit (L/C) at Sight',
-    targetMonth: 'Prompt (Within 15 Days)',
+    destinationPort: 'চট্টগ্রাম বন্দর (CPA)',
+    packaging: '৫০ কেজি পলিপ্রপিলিন বস্তা',
+    paymentTerm: '১০০% অলঙ্ঘনীয় লেটার অব ক্রেডিট (L/C at Sight)',
+    targetMonth: 'তাৎক্ষণিক স্পট (১৫ দিনের মধ্যে)',
     companyName: '',
     contactPerson: '',
-    designation: 'Managing Director / Procurement Head',
+    designation: 'ম্যানেজিং ডিরেক্টর / প্রকিউরমেন্ট হেড',
     email: '',
     phone: '',
     tradeLicenseBIN: '',
@@ -97,7 +97,7 @@ export default function RFQModal({
   const estimatedValue = formData.volumeMT * (formData.incoterm === 'CIF' ? 425 : 375);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md overflow-y-auto animate-in fade-in">
       <div className="relative w-full max-w-2xl bg-[#0B142B] border border-agro-gold-500/40 rounded-3xl shadow-2xl p-6 sm:p-8 my-8 text-slate-100 overflow-hidden">
         
         {/* Close Button */}
@@ -116,14 +116,14 @@ export default function RFQModal({
               <div className="flex items-center gap-2 mb-1">
                 <Sparkles className="w-4 h-4 text-agro-gold-400" />
                 <span className="text-xs font-bold uppercase tracking-widest text-agro-gold-400">
-                  Direct Institutional Import Desk
+                  ZENTRA TRADE • প্রাতিষ্ঠানিক আমদানি ডেস্ক
                 </span>
               </div>
               <h3 className="font-display font-black text-2xl text-white">
-                Request Formal Proforma / Bulk RFQ
+                বাল্ক খাদ্যশস্য আমদানির প্রোফরমা কোটেশন (RFQ)
               </h3>
               <p className="text-xs text-slate-300 mt-1">
-                Step {step} of 3 — Complete trade requirements for verified pricing and vessel allocation.
+                ধাপ {step} এর ৩ — সঠিক তথ্য প্রদান করে জাহাজের স্পেস ও খাতুনগঞ্জ রেট নিশ্চিত করুন।
               </p>
 
               {/* Progress Steps */}
@@ -146,7 +146,7 @@ export default function RFQModal({
                 <div className="space-y-4 animate-in fade-in">
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                      Commodity Required
+                      প্রয়োজনীয় খাদ্যপণ্য
                     </label>
                     <select
                       value={formData.commodity}
@@ -162,7 +162,7 @@ export default function RFQModal({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        Order Volume (Metric Tons)
+                        অর্ডার পরিমাণ (মেট্রিক টন)
                       </label>
                       <input
                         type="number"
@@ -175,16 +175,16 @@ export default function RFQModal({
                     </div>
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        Incoterms
+                        ট্রেড ইনকোটার্মস
                       </label>
                       <select
                         value={formData.incoterm}
                         onChange={(e) => handleChange('incoterm', e.target.value)}
                         className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
                       >
-                        <option value="CIF">CIF (Cost, Insurance & Freight)</option>
-                        <option value="CFR">CFR (Cost & Ocean Freight)</option>
-                        <option value="FOB">FOB (Free On Board Origin)</option>
+                        <option value="CIF">CIF (পণ্যমূল্য, ফ্রেইট ও ইন্স্যুরেন্স সহ)</option>
+                        <option value="CFR">CFR (পণ্যমূল্য ও সমুদ্র ফ্রেইট সহ)</option>
+                        <option value="FOB">FOB (চীন উৎস বন্দর খালাস)</option>
                       </select>
                     </div>
                   </div>
@@ -192,7 +192,7 @@ export default function RFQModal({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        Discharge Port
+                        খালাস বন্দর / ডেলিভারি পয়েন্ট
                       </label>
                       <input
                         type="text"
@@ -203,7 +203,7 @@ export default function RFQModal({
                     </div>
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        Packaging
+                        প্যাকেজিং পছন্দ
                       </label>
                       <input
                         type="text"
@@ -221,48 +221,48 @@ export default function RFQModal({
                 <div className="space-y-4 animate-in fade-in">
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                      Acceptable Payment Terms
+                      পেমেন্ট ও ব্যাংক এল/সি মাধ্যম
                     </label>
                     <select
                       value={formData.paymentTerm}
                       onChange={(e) => handleChange('paymentTerm', e.target.value)}
                       className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
                     >
-                      <option value="100% Irrevocable Letter of Credit (L/C) at Sight">
-                        100% Irrevocable Letter of Credit (L/C) at Sight
+                      <option value="১০০% অলঙ্ঘনীয় লেটার অব ক্রেডিট (L/C at Sight)">
+                        ১০০% অলঙ্ঘনীয় লেটার অব ক্রেডিট (100% Irrevocable L/C at Sight)
                       </option>
-                      <option value="Cash Against Documents (CAD) via Prime Bank">
-                        Cash Against Documents (CAD) via Prime Bank
+                      <option value="ক্যাশ এগেইনস্ট ডকুমেন্টস (CAD via Prime Bank)">
+                        ক্যাশ এগেইনস্ট ডকুমেন্টস (CAD via Prime Bank)
                       </option>
-                      <option value="Usance L/C 60/90 Days (Subject to Credit Review)">
-                        Usance L/C 60/90 Days (Subject to Credit Review)
+                      <option value="ইউজেন্স এল/সি ৬০/৯০ দিন (ক্রেডিট রিভিউ সাপেক্ষে)">
+                        ইউজেন্স এল/সি ৬০/৯০ দিন (Usance L/C 60/90 Days)
                       </option>
-                      <option value="20% Advance TT + 80% Against BL Copy">
-                        20% Advance TT + 80% Against BL Copy
+                      <option value="২০% অগ্রিম টিটি + ৮০% বিল অব লেডিং কপি প্রাপ্তিতে">
+                        ২০% অগ্রিম টিটি + ৮০% বিল অব লেডিং কপি প্রাপ্তিতে
                       </option>
                     </select>
                   </div>
 
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                      Target Port Arrival Window
+                      কাঙ্ক্ষিত বন্দর আগমন সময়সূচি
                     </label>
                     <select
                       value={formData.targetMonth}
                       onChange={(e) => handleChange('targetMonth', e.target.value)}
                       className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
                     >
-                      <option value="Prompt (Within 15 Days)">Prompt (Within 15 Days)</option>
-                      <option value="Next Month (30 Days Forward)">Next Month (30 Days Forward)</option>
-                      <option value="Upcoming Season / Ramadan Buffer Window">Upcoming Season / Ramadan Buffer Window</option>
-                      <option value="Quarterly Multi-Vessel Spread Contract">Quarterly Multi-Vessel Spread Contract</option>
+                      <option value="তাৎক্ষণিক স্পট (১৫ দিনের মধ্যে)">তাৎক্ষণিক স্পট (১৫ দিনের মধ্যে)</option>
+                      <option value="আগামী মাস (৩০ দিনের ফরোয়ার্ড চুক্তি)">আগামী মাস (৩০ দিনের ফরোয়ার্ড চুক্তি)</option>
+                      <option value="আসন্ন রমজান বাৎসরিক বাফার স্টক">আসন্ন রমজান বাৎসরিক বাফার স্টক</option>
+                      <option value="ত্রৈমাসিক মাল্টি-ভ্যাসেল বিস্তার চুক্তি">ত্রৈমাসিক মাল্টি-ভ্যাসেল বিস্তার চুক্তি</option>
                     </select>
                   </div>
 
                   {/* Drag-and-Drop PO / L/C Upload Simulator */}
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                      Attach Purchase Order / L/C Draft / Mill Specs (Optional)
+                      পারচেজ অর্ডার / এল/সি ড্রাফট / স্পেসিফিকেশন ফাইল সংযুক্ত করুন (ঐচ্ছিক)
                     </label>
                     <div className="border-2 border-dashed border-slate-700 hover:border-agro-gold-500/60 rounded-2xl p-6 text-center transition-colors bg-slate-950/60 cursor-pointer relative">
                       <input 
@@ -272,10 +272,10 @@ export default function RFQModal({
                       />
                       <UploadCloud className="w-8 h-8 text-agro-gold-400 mx-auto mb-2" />
                       <p className="text-xs text-slate-300 font-semibold">
-                        {uploadedFile ? `Attached: ${uploadedFile}` : 'Drag & drop your PDF / Word document or click to browse'}
+                        {uploadedFile ? `সংযুক্ত ফাইল: ${uploadedFile}` : 'PDF / Word ফাইল টেনে আনুন অথবা ব্রাউজ করুন'}
                       </p>
                       <p className="text-[10px] text-slate-500 mt-1">
-                        Supported: PDF, DOCX, XLSX (Up to 25MB)
+                        সাপোর্টেড ফরম্যাট: PDF, DOCX, XLSX (সর্বোচ্চ ২৫ মেগাবাইট)
                       </p>
                     </div>
                   </div>
@@ -288,12 +288,12 @@ export default function RFQModal({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        Company / Mill Name *
+                        প্রতিষ্ঠানের / ডাল মিলের নাম *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Meghna Agro Mills Ltd."
+                        placeholder="যেমন: মেঘনা অ্যাগ্রো মিলস লি."
                         value={formData.companyName}
                         onChange={(e) => handleChange('companyName', e.target.value)}
                         className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
@@ -301,11 +301,11 @@ export default function RFQModal({
                     </div>
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        BIN / Trade License No
+                        ই-টিআইএন / বিআইএন / ট্রেড লাইসেন্স
                       </label>
                       <input
                         type="text"
-                        placeholder="e.g. BIN-00291048-0201"
+                        placeholder="যেমন: BIN-00291048-0201"
                         value={formData.tradeLicenseBIN}
                         onChange={(e) => handleChange('tradeLicenseBIN', e.target.value)}
                         className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
@@ -316,12 +316,12 @@ export default function RFQModal({
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        Contact Person Name *
+                        যোগাযোগকারীর নাম *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="e.g. Masum Ahmed"
+                        placeholder="যেমন: মোঃ মাসুম আহমেদ"
                         value={formData.contactPerson}
                         onChange={(e) => handleChange('contactPerson', e.target.value)}
                         className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
@@ -329,12 +329,12 @@ export default function RFQModal({
                     </div>
                     <div>
                       <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                        WhatsApp / Mobile No *
+                        হোয়াটসঅ্যাপ / মোবাইল নম্বর *
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +880 1712-345678"
+                        placeholder="যেমন: +880 1712-345678"
                         value={formData.phone}
                         onChange={(e) => handleChange('phone', e.target.value)}
                         className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
@@ -344,12 +344,12 @@ export default function RFQModal({
 
                   <div>
                     <label className="block text-xs font-bold uppercase text-slate-300 mb-1.5">
-                      Official Corporate Email *
+                      অফিসিয়াল ইমেইল অ্যাড্রেস *
                     </label>
                     <input
                       type="email"
                       required
-                      placeholder="e.g. procurement@meghna-agro.com"
+                      placeholder="যেমন: procurement@meghna-agro.com"
                       value={formData.email}
                       onChange={(e) => handleChange('email', e.target.value)}
                       className="w-full p-3 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:border-agro-gold-500 focus:outline-none"
@@ -367,7 +367,7 @@ export default function RFQModal({
                     className="px-4 py-2.5 rounded-xl bg-slate-900 text-slate-300 text-xs font-semibold hover:bg-slate-800 flex items-center gap-1.5"
                   >
                     <ArrowLeft className="w-3.5 h-3.5" />
-                    <span>Previous</span>
+                    <span>পূর্ববর্তী</span>
                   </button>
                 ) : <div />}
 
@@ -375,7 +375,7 @@ export default function RFQModal({
                   type="submit"
                   className="px-6 py-3 rounded-xl bg-gradient-to-r from-agro-gold-500 to-amber-500 text-agro-navy-950 font-bold text-xs shadow-lg hover:shadow-agro-gold-500/30 flex items-center gap-2"
                 >
-                  <span>{step === 3 ? 'Submit Institutional RFQ' : 'Continue to Next Step'}</span>
+                  <span>{step === 3 ? 'অফিসিয়াল RFQ জমা দিন' : 'পরবর্তী ধাপ'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
@@ -391,11 +391,11 @@ export default function RFQModal({
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h3 className="font-display font-black text-2xl text-white">
-                RFQ Confirmed & Dispatched!
+                RFQ সফলভাবে জমা হয়েছে!
               </h3>
               <p className="text-xs text-slate-300 max-w-md mx-auto mt-1">
-                Ref Code: <span className="font-mono text-agro-gold-400 font-bold">RFQ-AGRO-{Math.floor(100000 + Math.random() * 900000)}</span>. 
-                Our Commodity Trading Desk will contact you on WhatsApp/Phone within 60 minutes.
+                রেফারেন্স কোড: <span className="font-mono text-agro-gold-400 font-bold">ZENTRA-RFQ-{Math.floor(100000 + Math.random() * 900000)}</span>. 
+                Zentra Trade-এর সিনিয়র ব্রোকার আগামী ৬০ মিনিটের মধ্যে আপনার সাথে যোগাযোগ করবেন।
               </p>
             </div>
 
@@ -405,40 +405,40 @@ export default function RFQModal({
               <div className="flex justify-between items-start border-b border-slate-300 pb-3 mb-3">
                 <div>
                   <h4 className="font-display font-black text-base tracking-wide text-slate-900">
-                    AGRO-OCEAN GLOBAL ENTERPRISE
+                    ZENTRA TRADE BANGLADESH
                   </h4>
-                  <p className="text-[10px] text-slate-600">Agricultural Wholesale Imports • Chittagong & Mongla</p>
+                  <p className="text-[10px] text-slate-600">চীন ও আন্তর্জাতিক বাল্ক খাদ্যপণ্য আমদানি • চট্টগ্রাম ও মোংলা</p>
                 </div>
                 <div className="text-right">
                   <span className="font-mono text-[10px] font-bold px-2 py-0.5 bg-slate-100 rounded border border-slate-300">
                     PROFORMA ESTIMATE
                   </span>
-                  <p className="text-[10px] text-slate-500 mt-1">Date: {new Date().toLocaleDateString()}</p>
+                  <p className="text-[10px] text-slate-500 mt-1">তারিখ: {new Date().toLocaleDateString('bn-BD')}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-2 mb-3 pb-3 border-b border-slate-200">
                 <div>
-                  <p className="text-[10px] text-slate-500 font-bold uppercase">Consignee / Buyer:</p>
-                  <p className="font-bold text-slate-800">{formData.companyName || 'Corporate Client'}</p>
-                  <p className="text-[11px] text-slate-600">Attn: {formData.contactPerson || 'Procurement Desk'}</p>
-                  <p className="text-[11px] text-slate-600">Phone: {formData.phone || '+880-1700-000000'}</p>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase">বায়ার / কনসাইনি:</p>
+                  <p className="font-bold text-slate-800">{formData.companyName || 'কর্পোরেট ক্লায়েন্ট'}</p>
+                  <p className="text-[11px] text-slate-600">মনোযোগ: {formData.contactPerson || 'প্রকিউরমেন্ট ডিপার্টমেন্ট'}</p>
+                  <p className="text-[11px] text-slate-600">ফোন: {formData.phone || '+৮৮০ ১৭১১-০০০০০০'}</p>
                 </div>
                 <div className="text-right">
-                  <p className="text-[10px] text-slate-500 font-bold uppercase">Discharge Details:</p>
+                  <p className="text-[10px] text-slate-500 font-bold uppercase">ডেলিভারি বিবরণ:</p>
                   <p className="font-semibold text-slate-800">{formData.destinationPort}</p>
-                  <p className="text-[11px] text-slate-600">Terms: {formData.incoterm} • L/C at Sight</p>
-                  <p className="text-[11px] text-slate-600">Packing: {formData.packaging}</p>
+                  <p className="text-[11px] text-slate-600">টার্ম: {formData.incoterm} • L/C at Sight</p>
+                  <p className="text-[11px] text-slate-600">প্যাকিং: {formData.packaging}</p>
                 </div>
               </div>
 
               <table className="w-full text-left mb-3">
                 <thead>
                   <tr className="border-b border-slate-300 text-[10px] uppercase text-slate-500">
-                    <th className="py-1">Commodity</th>
-                    <th className="py-1 text-right">Volume</th>
-                    <th className="py-1 text-right">Term</th>
-                    <th className="py-1 text-right">Estimated Total</th>
+                    <th className="py-1">পণ্য</th>
+                    <th className="py-1 text-right">পরিমাণ</th>
+                    <th className="py-1 text-right">টার্ম</th>
+                    <th className="py-1 text-right">মোট দর (টাকা)</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-200 text-[11px]">
@@ -454,8 +454,8 @@ export default function RFQModal({
               </table>
 
               <div className="p-2 rounded bg-slate-100 border border-slate-200 text-[10px] text-slate-600">
-                <p>✓ Quality Guarantee: Certified 99.5% Purity by SGS inspection before vessel departure.</p>
-                <p>✓ All shipments backed by official Phytosanitary & Non-Radiation certificates.</p>
+                <p>✓ গুণগত মান গ্যারান্টি: জাহাজে বোঝাইয়ের পূর্বে SGS ও CIQ ল্যাব টেস্টে ৯৯.৫% বিশুদ্ধতা প্রত্যয়িত।</p>
+                <p>✓ সকল চালান জাতীয় উদ্ভিদ সংগনিরোধ (NPPO) ও রেডিয়েশন-মুক্ত সনদপ্রাপ্ত।</p>
               </div>
 
             </div>
@@ -467,14 +467,14 @@ export default function RFQModal({
                 className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-colors"
               >
                 <Printer className="w-4 h-4 text-agro-gold-400" />
-                <span>Print / Save PDF Quote</span>
+                <span>প্রিন্ট / PDF ডাউনলোড</span>
               </button>
 
               <button
                 onClick={onClose}
                 className="px-6 py-2.5 rounded-xl bg-agro-gold-500 hover:bg-agro-gold-400 text-agro-navy-950 font-bold text-xs shadow-lg transition-colors"
               >
-                Done
+                সম্পন্ন
               </button>
             </div>
 

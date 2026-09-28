@@ -48,16 +48,16 @@ export default function CommodityShowcase({
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-agro-gold-500/10 border border-agro-gold-500/30 text-agro-gold-400 text-xs font-bold uppercase tracking-widest mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Industrial Bulk Portfolio</span>
+            <span>ZENTRA TRADE • প্রিমিয়াম কমোডিটি পোর্টফোলিও</span>
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight leading-tight">
-            Premium Agricultural <br />
+            চীন ও আন্তর্জাতিক আমদানি <br />
             <span className="bg-gradient-to-r from-agro-gold-400 via-amber-300 to-agro-gold-500 bg-clip-text text-transparent">
-              Pulses, Peas & Legumes
+              উন্নত জাতের ডাল, ছোলা ও শস্যদানা
             </span>
           </h2>
           <p className="text-slate-300 text-sm sm:text-base mt-4">
-            Specialized wholesale import supplies designed for Dal processing mills, packaged retail re-packers, and bulk commodity trading across Bangladesh.
+            Zentra Trade-এর মাধ্যমে সরাসরি আমদানিকৃত ডাল ও খাদ্যশস্য দেশের শীর্ষস্থানীয় ডাল মিল, প্রক্রিয়াজাত খাদ্য কারখানা ও খাতুনগঞ্জের পাইকারি আড়তদারদের জন্য প্রস্তুতকৃত।
           </p>
         </div>
 

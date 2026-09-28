@@ -15,6 +15,7 @@ import {
   MapPin
 } from 'lucide-react';
 import HeroCanvas from './HeroCanvas';
+import { getAssetUrl } from '../utils/assets';
 
 export default function Hero({ onOpenRFQ, onOpenTracker, onOpenCatalog }) {
   // Animated Counter simulation
@@ -53,14 +54,14 @@ export default function Hero({ onOpenRFQ, onOpenTracker, onOpenCatalog }) {
           {/* Left Column: Core Value Proposition & Magnetic CTAs */}
           <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
-            {/* Top Operational Pill with China & BD focus */}
+            {/* Top Operational Pill with Zentra Trade & China focus */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-agro-navy-800/80 border border-agro-gold-500/30 shadow-lg shadow-black/40 backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping-slow" />
               <span className="text-xs font-semibold text-agro-gold-300">
-                বাংলাদেশ-চীন প্রধান বাণিজ্য করিডোর • খাতুনগঞ্জ ও দেশব্যাপী সরবরাহ
+                ZENTRA TRADE • চীন-বাংলাদেশ প্রধান খাদ্যপণ্য বাণিজ্য করিডোর
               </span>
               <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-agro-gold-500/20 text-agro-gold-300 border border-agro-gold-500/30">
-                ৮০%+ চীন আমদানি
+                ৮০%+ চীন ভলিউম
               </span>
             </div>
 
@@ -73,12 +74,12 @@ export default function Hero({ onOpenRFQ, onOpenTracker, onOpenCatalog }) {
               চট্টগ্রাম ও মোংলায় সরাসরি আমদানি।
             </h1>
 
-            {/* Sub-headline tailored to Khatunganj & China-Bangladesh Trade */}
+            {/* Sub-headline tailored to Khatunganj & Zentra Trade */}
             <p className="text-slate-300 text-sm sm:text-base max-w-2xl font-normal leading-relaxed">
-              দেশের শীর্ষস্থানীয় ডাল মিল, প্রক্রিয়াজাত খাদ্য প্রস্তুতকারক এবং <strong className="text-white font-semibold">খাতুনগঞ্জ ও বাদামতলীর পাইকারি আড়তদারদের</strong> প্রধান আমদানিকারক প্রতিষ্ঠান। প্রধানত <strong className="text-agro-gold-300 font-semibold">চীন (গুয়াংজু ও কিংদাও)</strong> থেকে ৮০%+ বাল্ক ভলিউম এবং আশপাশের প্রতিবেশী দেশ <strong className="text-white font-semibold">(ভারত ও মিয়ানমার)</strong> থেকে বাছাইকৃত <strong className="text-white font-semibold">বুটের ডাল (Yellow Split Peas), ছোলা (Desi Chickpeas), কিডনি বিনস ও মসুর ডাল</strong> নিয়মিত বাল্ক ও কনটেইনার কার্গোতে সরাসরি সরবরাহ।
+              <strong className="text-agro-gold-300 font-bold">Zentra Trade</strong> — দেশের শীর্ষস্থানীয় ডাল মিল, প্রক্রিয়াজাত খাদ্য প্রস্তুতকারক এবং <strong className="text-white font-semibold">খাতুনগঞ্জ ও বাদামতলীর পাইকারি আড়তদারদের</strong> প্রধান আমদানিকারক প্রতিষ্ঠান। প্রধানত <strong className="text-agro-gold-300 font-semibold">চীন (গুয়াংজু ও কিংদাও)</strong> থেকে ৮০%+ বাল্ক ভলিউম এবং আশপাশের প্রতিবেশী দেশ <strong className="text-white font-semibold">(ভারত ও মিয়ানমার)</strong> থেকে বাছাইকৃত <strong className="text-white font-semibold">বুটের ডাল (Yellow Split Peas), ছোলা (Desi Chickpeas), কিডনি বিনস ও মসুর ডাল</strong> নিয়মিত বাল্ক ও কনটেইনার কার্গোতে সরাসরি সরবরাহ।
             </p>
 
-            {/* Key feature pills with Bangladeshi Trade Realities */}
+            {/* Key feature pills */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1 text-xs text-slate-300">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-agro-navy-900/80 border border-slate-800">
                 <CheckCircle2 className="w-4 h-4 text-agro-gold-400" />
@@ -136,8 +137,8 @@ export default function Hero({ onOpenRFQ, onOpenTracker, onOpenCatalog }) {
               {/* Main Visual Frame with 3D Tilt aesthetic */}
               <div className="relative rounded-3xl overflow-hidden border border-agro-gold-500/30 shadow-2xl shadow-black/80 bg-agro-navy-900 group">
                 <img 
-                  src="/images/china_bd_cargo.jpg" 
-                  alt="চীন ও বাংলাদেশ রুটে চলাচলকারী বিশাল কৃষি কমোডিটি কার্গো জাহাজ"
+                  src={getAssetUrl("images/china_bd_cargo.jpg")} 
+                  alt="Zentra Trade চীন ও বাংলাদেশ রুটে চলাচলকারী বিশাল কৃষি কমোডিটি কার্গো জাহাজ"
                   className="w-full h-[430px] object-cover object-center group-hover:scale-105 transition-transform duration-700" 
                 />
                 
