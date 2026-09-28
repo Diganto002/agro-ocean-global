@@ -12,7 +12,8 @@ import {
   X,
   Compass,
   Layers,
-  Sparkles
+  Sparkles,
+  Building2
 } from 'lucide-react';
 import { currencies } from '../data/marketRates';
 
@@ -38,22 +39,20 @@ export default function Navbar({
   }, []);
 
   const languages = [
-    { code: 'EN', name: 'English (Global Trade)' },
     { code: 'BN', name: 'বাংলা (বাংলাদেশ ট্রেড)' },
-    { code: 'AR', name: 'العربية (الشرق الأوسط)' }
+    { code: 'EN', name: 'English (China-BD Trade)' }
   ];
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-[#070B18]/90 backdrop-blur-md border-b border-agro-gold-500/20 py-2.5 shadow-2xl shadow-black/50' 
+        ? 'bg-[#070B18]/92 backdrop-blur-md border-b border-agro-gold-500/20 py-2.5 shadow-2xl shadow-black/50' 
         : 'bg-transparent py-4 border-b border-white/5'
     }`}>
-      {/* Top operational announcement banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Logo */}
+          {/* Brand Logo with Bangladesh identity */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-agro-gold-500 via-agro-amber-600 to-agro-navy-900 p-0.5 shadow-lg shadow-agro-gold-500/20 group-hover:shadow-agro-gold-500/40 transition-all">
               <div className="w-full h-full bg-[#0B132B] rounded-[10px] flex items-center justify-center">
@@ -65,57 +64,61 @@ export default function Navbar({
                 <span className="font-display font-black tracking-wider text-xl text-white">
                   AGRO<span className="text-agro-gold-400">OCEAN</span>
                 </span>
-                <span className="text-[10px] tracking-widest uppercase font-semibold px-1.5 py-0.5 rounded bg-agro-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                  GLOBAL
+                <span className="text-[10px] tracking-widest uppercase font-bold px-1.5 py-0.5 rounded bg-agro-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                  BANGLADESH
                 </span>
               </div>
-              <p className="text-[10px] tracking-wider text-slate-400 font-medium">
-                Bulk Agro-Commodities • CIF Chittagong & Mongla
+              <p className="text-[10px] tracking-wider text-slate-300 font-medium">
+                চীন-বাংলাদেশ বাল্ক খাদ্যপণ্য আমদানি • খাতুনগঞ্জ ও চট্টগ্রাম বন্দর
               </p>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden xl:flex items-center gap-7 text-sm font-medium text-slate-300">
-            <a href="#commodities" className="hover:text-agro-gold-400 transition-colors flex items-center gap-1.5">
-              <span>Commodities</span>
+          <nav className="hidden xl:flex items-center gap-6 text-sm font-medium text-slate-200">
+            <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
+              <span>পণ্যসমূহ</span>
             </a>
             <a href="#calculator" className="hover:text-agro-gold-400 transition-colors flex items-center gap-1.5">
               <Calculator className="w-3.5 h-3.5 text-agro-gold-400" />
-              <span>CIF / FOB Calculator</span>
+              <span>ল্যান্ডেড ক্যালকুলেটর</span>
+            </a>
+            <a href="#warehouse" className="hover:text-agro-gold-400 transition-colors flex items-center gap-1.5">
+              <Building2 className="w-3.5 h-3.5 text-agro-gold-400" />
+              <span>খাতুনগঞ্জ ওয়্যারহাউস</span>
             </a>
             <a href="#routes" className="hover:text-agro-gold-400 transition-colors flex items-center gap-1.5">
-              <Compass className="w-3.5 h-3.5 text-agro-gold-400" />
-              <span>Global Routes</span>
+              <Compass className="w-3.5 h-3.5 text-cyan-400" />
+              <span>চীন-বিডি রুট</span>
             </a>
             <a href="#tracking" className="hover:text-agro-gold-400 transition-colors flex items-center gap-1.5">
-              <Ship className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Live Vessel Radar</span>
+              <Ship className="w-3.5 h-3.5 text-blue-400" />
+              <span>জাহাজ ট্র্যাকিং</span>
             </a>
             <a href="#quality" className="hover:text-agro-gold-400 transition-colors flex items-center gap-1.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-              <span>SGS Quality & QA</span>
+              <span>SGS কোয়ালিটি</span>
             </a>
           </nav>
 
           {/* Controls: Currency, Language & Primary CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             
-            {/* Currency Selector */}
+            {/* Currency Selector (BDT default) */}
             <div className="relative">
               <button 
                 onClick={() => setCurrencyDropdownOpen(!currencyDropdownOpen)}
-                className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-agro-navy-800/80 border border-slate-700/60 text-slate-200 hover:border-agro-gold-500/50 hover:bg-agro-navy-700 transition-all"
+                className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1.5 rounded-lg bg-agro-navy-800/90 border border-agro-gold-500/40 text-agro-gold-300 hover:bg-agro-navy-700 transition-all shadow-md"
                 title="Select Currency"
               >
-                <span className="text-agro-gold-400 font-bold">{currencies[selectedCurrency].symbol}</span>
+                <span className="text-white font-bold">{currencies[selectedCurrency].symbol}</span>
                 <span>{selectedCurrency}</span>
                 <ChevronDown className="w-3 h-3 text-slate-400" />
               </button>
 
               {currencyDropdownOpen && (
                 <div 
-                  className="absolute right-0 mt-2 w-36 bg-[#0E172E] border border-agro-gold-500/30 rounded-xl shadow-2xl py-1 z-50 animate-in fade-in slide-in-from-top-2"
+                  className="absolute right-0 mt-2 w-44 bg-[#0E172E] border border-agro-gold-500/30 rounded-xl shadow-2xl py-1 z-50 animate-in fade-in"
                   onMouseLeave={() => setCurrencyDropdownOpen(false)}
                 >
                   {Object.keys(currencies).map((code) => (
@@ -129,8 +132,7 @@ export default function Navbar({
                         selectedCurrency === code ? 'text-agro-gold-400 font-bold bg-agro-navy-800' : 'text-slate-300'
                       }`}
                     >
-                      <span>{code}</span>
-                      <span className="text-slate-400 font-mono text-[11px]">{currencies[code].symbol}</span>
+                      <span>{currencies[code].label}</span>
                     </button>
                   ))}
                 </div>
@@ -150,7 +152,7 @@ export default function Navbar({
 
               {langDropdownOpen && (
                 <div 
-                  className="absolute right-0 mt-2 w-48 bg-[#0E172E] border border-agro-gold-500/30 rounded-xl shadow-2xl py-1 z-50 animate-in fade-in slide-in-from-top-2"
+                  className="absolute right-0 mt-2 w-48 bg-[#0E172E] border border-agro-gold-500/30 rounded-xl shadow-2xl py-1 z-50 animate-in fade-in"
                   onMouseLeave={() => setLangDropdownOpen(false)}
                 >
                   {languages.map((lang) => (
@@ -179,7 +181,7 @@ export default function Navbar({
               <span className="absolute inset-0 bg-gradient-to-r from-agro-gold-500 via-amber-400 to-agro-gold-600 rounded-xl transition-all duration-300 group-hover:opacity-100 group-hover:scale-105" />
               <span className="relative flex items-center gap-2 px-4 py-2 rounded-xl bg-agro-navy-950 text-xs font-bold text-agro-gold-300 transition-all duration-300 group-hover:bg-transparent group-hover:text-agro-navy-950">
                 <Sparkles className="w-3.5 h-3.5 text-agro-gold-400 group-hover:text-agro-navy-950" />
-                <span>Instant RFQ Quote</span>
+                <span>তাৎক্ষণিক কোটেশন (RFQ)</span>
               </span>
             </button>
           </div>
@@ -190,7 +192,7 @@ export default function Navbar({
               onClick={onOpenRFQ}
               className="px-3 py-1.5 rounded-lg bg-agro-gold-500 text-agro-navy-950 text-xs font-bold"
             >
-              RFQ
+              কোটেশন
             </button>
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -211,7 +213,7 @@ export default function Navbar({
                 onClick={() => setMobileMenuOpen(false)}
                 className="p-2 hover:bg-agro-navy-800 rounded-lg flex items-center gap-2"
               >
-                <span>Agricultural Commodities</span>
+                <span>খাদ্যপণ্যসমূহ</span>
               </a>
               <a 
                 href="#calculator" 
@@ -219,7 +221,15 @@ export default function Navbar({
                 className="p-2 hover:bg-agro-navy-800 rounded-lg flex items-center gap-2 text-agro-gold-400"
               >
                 <Calculator className="w-4 h-4" />
-                <span>CIF / FOB Bulk Calculator</span>
+                <span>ল্যান্ডেড খরচ ক্যালকুলেটর</span>
+              </a>
+              <a 
+                href="#warehouse" 
+                onClick={() => setMobileMenuOpen(false)}
+                className="p-2 hover:bg-agro-navy-800 rounded-lg flex items-center gap-2"
+              >
+                <Building2 className="w-4 h-4 text-agro-gold-400" />
+                <span>খাতুনগঞ্জ আড়ত ও ওয়্যারহাউস</span>
               </a>
               <a 
                 href="#routes" 
@@ -227,7 +237,7 @@ export default function Navbar({
                 className="p-2 hover:bg-agro-navy-800 rounded-lg flex items-center gap-2"
               >
                 <Compass className="w-4 h-4 text-cyan-400" />
-                <span>Global Shipping Routes</span>
+                <span>চীন-বাংলাদেশ শিপিং রুট</span>
               </a>
               <a 
                 href="#tracking" 
@@ -235,7 +245,7 @@ export default function Navbar({
                 className="p-2 hover:bg-agro-navy-800 rounded-lg flex items-center gap-2"
               >
                 <Ship className="w-4 h-4 text-blue-400" />
-                <span>Live Vessel Telemetry</span>
+                <span>লাইভ জাহাজ ট্র্যাকিং</span>
               </a>
               <a 
                 href="#quality" 
@@ -243,7 +253,7 @@ export default function Navbar({
                 className="p-2 hover:bg-agro-navy-800 rounded-lg flex items-center gap-2"
               >
                 <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>SGS Quality & Fumigation</span>
+                <span>SGS ও কোয়ারেন্টাইন পরিদর্শন</span>
               </a>
             </nav>
 
@@ -268,7 +278,7 @@ export default function Navbar({
                 }}
                 className="px-4 py-2 rounded-xl bg-agro-gold-500 text-agro-navy-950 font-bold text-xs"
               >
-                Request Quote
+                কোটেশন চান
               </button>
             </div>
           </div>

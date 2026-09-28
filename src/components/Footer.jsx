@@ -8,7 +8,8 @@ import {
   Award, 
   Globe2, 
   ArrowUp,
-  FileText
+  FileText,
+  Building2
 } from 'lucide-react';
 
 export default function Footer({ onOpenRFQ, onOpenCatalog }) {
@@ -33,25 +34,25 @@ export default function Footer({ onOpenRFQ, onOpenCatalog }) {
               </div>
               <div>
                 <span className="font-display font-black text-xl text-white tracking-wider">
-                  AGRO<span className="text-agro-gold-400">OCEAN</span> GLOBAL
+                  AGRO<span className="text-agro-gold-400">OCEAN</span> BANGLADESH
                 </span>
-                <p className="text-[10px] text-slate-400 font-medium">Bulk Commodity Import & Maritime Trading</p>
+                <p className="text-[10px] text-slate-400 font-medium">চীন-বাংলাদেশ বাল্ক খাদ্যপণ্য আমদানি ও সরবরাহকারী প্রতিষ্ঠান</p>
               </div>
             </div>
 
             <p className="text-slate-300 text-xs leading-relaxed max-w-sm">
-              Direct primary importer of agricultural pulses, Canadian Yellow Split Peas ("But" / Booter Dal), and Australian Chickpeas ("Chola"). Connecting global prairie harvest to South Asian commercial food mills.
+              চীন (৮০%+) ও প্রতিবেশী দেশগুলো থেকে উন্নত জাতের বুটের ডাল (Yellow Split Peas), ছোলা (Desi & Kabuli Chickpeas), সাদা শিম বিচি ও মসুর ডালের প্রধান আমদানিকারক। খাতুনগঞ্জ আড়ত ও দেশব্যাপী ডাল মিলগুলোতে নির্ভরযোগ্য পণ্য সরবরাহ।
             </p>
 
             <div className="flex flex-wrap gap-2 pt-2">
               <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300">
-                GAFTA Member No. 8920
+                খাতুনগঞ্জ ট্রেড অ্যাসোসিয়েশন
               </span>
               <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[10px] font-bold text-slate-300">
-                CPA Port Registered
+                চট্টগ্রাম বন্দর নিবন্ধিত আমদানিকারক
               </span>
               <span className="px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[10px] font-bold text-emerald-400">
-                SGS Inspected
+                DCCI ও GAFTA মেম্বার
               </span>
             </div>
           </div>
@@ -59,37 +60,37 @@ export default function Footer({ onOpenRFQ, onOpenCatalog }) {
           {/* Col 3: Core Commodities */}
           <div>
             <h4 className="font-bold text-sm text-white mb-3 uppercase tracking-wider">
-              Wholesale Commodities
+              প্রধান খাদ্যপণ্যসমূহ
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
                 <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
-                  Canadian Yellow Split Peas (Booter Dal)
+                  বাছাইকৃত বুটের ডাল (চীন ও কানাডা)
                 </a>
               </li>
               <li>
                 <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
-                  Australian Desi Chickpeas (Chola)
+                  অস্ট্রেলিয়ান ও দেশি ছোলা (ছোলা বুট)
                 </a>
               </li>
               <li>
                 <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
-                  Kabuli Chickpeas Jumbo 9mm
+                  চীনা হোয়াইট কিডনি বিনস
                 </a>
               </li>
               <li>
                 <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
-                  Crimson Red Split Lentils (Masoor)
+                  লাল মসুর ডাল (ফুটবল ও স্প্লিট)
                 </a>
               </li>
               <li>
                 <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
-                  Green Mung Beans & Dun Peas
+                  সবুজ মুগ ডাল (মিয়ানমার ও চীন)
                 </a>
               </li>
               <li>
                 <a href="#commodities" className="hover:text-agro-gold-400 transition-colors">
-                  Whole Yellow & Green Peas
+                  চীন এক্সপোর্ট: দেশি কালো ও সাদা তিল
                 </a>
               </li>
             </ul>
@@ -98,37 +99,37 @@ export default function Footer({ onOpenRFQ, onOpenCatalog }) {
           {/* Col 4: Trade Portals & Tools */}
           <div>
             <h4 className="font-bold text-sm text-white mb-3 uppercase tracking-wider">
-              Trade Desk & Logistics
+              বাণিজ্য সেবা ও ক্যালকুলেটর
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
                 <a href="#calculator" className="hover:text-agro-gold-400 transition-colors">
-                  CIF / FOB Pricing Calculator
+                  টাকায় ল্যান্ডেড খরচ ক্যালকুলেটর
+                </a>
+              </li>
+              <li>
+                <a href="#warehouse" className="hover:text-agro-gold-400 transition-colors">
+                  খাতুনগঞ্জ ওয়্যারহাউস ও মিল ডেলিভারি
                 </a>
               </li>
               <li>
                 <a href="#routes" className="hover:text-agro-gold-400 transition-colors">
-                  Interactive Route Map
+                  চীন-চট্টগ্রাম শিপিং রুট
                 </a>
               </li>
               <li>
                 <a href="#tracking" className="hover:text-agro-gold-400 transition-colors">
-                  Live Vessel Radar (CPA & Mongla)
-                </a>
-              </li>
-              <li>
-                <a href="#quality" className="hover:text-agro-gold-400 transition-colors">
-                  SGS Quality Standards
+                  লাইভ জাহাজ রাডার ট্র্যাকিং
                 </a>
               </li>
               <li>
                 <button onClick={onOpenCatalog} className="hover:text-agro-gold-400 transition-colors text-left">
-                  Download 2026 Crop Specs
+                  ২০২৬ ক্রপ ল্যাব স্পেক শিট
                 </button>
               </li>
               <li>
                 <button onClick={onOpenRFQ} className="text-agro-gold-400 font-bold hover:underline">
-                  Submit Institutional RFQ
+                  ইনস্টিটিউশনাল L/C কোটেশন
                 </button>
               </li>
             </ul>
@@ -137,27 +138,28 @@ export default function Footer({ onOpenRFQ, onOpenCatalog }) {
           {/* Col 5: Global Offices & Port Desks */}
           <div>
             <h4 className="font-bold text-sm text-white mb-3 uppercase tracking-wider">
-              Trade Port Desks
+              অফিস ও ওয়্যারহাউস
             </h4>
             <div className="space-y-3 text-xs text-slate-300">
               <div>
-                <p className="font-bold text-white text-[11px]">Chittagong Port Terminal Office:</p>
-                <p className="text-slate-400 text-[11px]">Agrabad Commercial Area, Chattogram 4100, Bangladesh</p>
+                <p className="font-bold text-white text-[11px]">চট্টগ্রাম ও খাতুনগঞ্জ অফিস:</p>
+                <p className="text-slate-400 text-[11px]">খাতুনগঞ্জ আড়ত ও আগ্রাবাদ বা/এ, চট্টগ্রাম-৪১০০</p>
               </div>
 
               <div>
-                <p className="font-bold text-white text-[11px]">Dhaka Trade Headquarters:</p>
-                <p className="text-slate-400 text-[11px]">Motijheel C/A, Dhaka 1000, Bangladesh</p>
+                <p className="font-bold text-white text-[11px]">ঢাকা হেড অফিস:</p>
+                <p className="text-slate-400 text-[11px]">মতিঝিল বাণিজ্যিক এলাকা, ঢাকা-১০০০, বাংলাদেশ</p>
               </div>
 
               <div>
-                <p className="font-bold text-white text-[11px]">Global Sourcing Desks:</p>
-                <p className="text-slate-400 text-[11px]">Vancouver (Canada) • Brisbane (Australia) • Dubai (UAE)</p>
+                <p className="font-bold text-white text-[11px]">চীন অফিস (China Sourcing):</p>
+                <p className="text-slate-400 text-[11px]">Tianhe District, Guangzhou & Qingdao, China</p>
               </div>
 
               <div className="pt-1 text-slate-300 font-mono text-[11px]">
-                <p>Phone: +880 (31) 712000-05</p>
-                <p>Email: trade@agro-ocean.com</p>
+                <p>হটলাইন: +৮৮০ (৩১) ৭১২০০০-০৫</p>
+                <p>হোয়াটসঅ্যাপ: +৮৮০ ১৭১১-০০০০০০</p>
+                <p>ইমেইল: trade@agro-ocean.com.bd</p>
               </div>
             </div>
           </div>
@@ -167,17 +169,17 @@ export default function Footer({ onOpenRFQ, onOpenCatalog }) {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500">
           <div>
-            © 2026 AGRO-OCEAN GLOBAL ENTERPRISE. All Rights Reserved. Specializing in Bulk Agricultural Pulses & Legumes Import.
+            © ২০২৬ AGRO-OCEAN BANGLADESH LTD. সর্বস্বত্ব সংরক্ষিত। চীন ও আঞ্চলিক কৃষি কমোডিটি আমদানি ও পাইকারি সরবরাহ।
           </div>
           
           <div className="flex items-center gap-6">
-            <span className="hover:text-slate-300 cursor-pointer">Terms of Maritime Cargo</span>
-            <span className="hover:text-slate-300 cursor-pointer">L/C Policy</span>
-            <span className="hover:text-slate-300 cursor-pointer">Privacy & KYC</span>
+            <span className="hover:text-slate-300 cursor-pointer">বাংলাদেশ ব্যাংক L/C নীতিমালা</span>
+            <span className="hover:text-slate-300 cursor-pointer">কাস্টমস ও ট্যারিফ গাইড</span>
+            <span className="hover:text-slate-300 cursor-pointer">প্রাইভেসি ও শর্তাবলী</span>
             <button
               onClick={scrollToTop}
               className="p-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white transition-colors flex items-center gap-1"
-              title="Back to Top"
+              title="উপরে যান"
             >
               <ArrowUp className="w-3.5 h-3.5" />
             </button>

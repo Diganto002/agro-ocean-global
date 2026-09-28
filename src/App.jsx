@@ -4,6 +4,7 @@ import MarketTicker from './components/MarketTicker';
 import Hero from './components/Hero';
 import CommodityShowcase from './components/CommodityShowcase';
 import BulkQuoteCalculator from './components/BulkQuoteCalculator';
+import KhatunganjWarehouse from './components/KhatunganjWarehouse';
 import TradeRouteMap from './components/TradeRouteMap';
 import ShipmentTracker from './components/ShipmentTracker';
 import QualityAssurance from './components/QualityAssurance';
@@ -14,8 +15,8 @@ import Footer from './components/Footer';
 import { commoditiesData } from './data/commoditiesData';
 
 export default function App() {
-  const [selectedCurrency, setSelectedCurrency] = useState('USD');
-  const [activeLanguage, setActiveLanguage] = useState('EN');
+  const [selectedCurrency, setSelectedCurrency] = useState('BDT'); // Default to Bangladeshi Taka
+  const [activeLanguage, setActiveLanguage] = useState('BN');       // Default to Bangla
   const [isRFQOpen, setIsRFQOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const [activeQuotePayload, setActiveQuotePayload] = useState(null);
@@ -77,53 +78,60 @@ export default function App() {
       {/* Main Page Body */}
       <main className="flex-1">
         
-        {/* 2. Hero Section with 3D Canvas Seeds & Bulk Cargo Presentation */}
+        {/* 2. Hero Section with 3D Canvas Particles & China-BD Cargo Ship Presentation */}
         <Hero
           onOpenRFQ={() => setIsRFQOpen(true)}
           onOpenTracker={handleOpenTracker}
           onOpenCatalog={() => setIsCatalogOpen(true)}
         />
 
-        {/* 3. Live Marquee Market FOB/CIF Ticker */}
+        {/* 3. Live Marquee Market FOB/CIF Ticker with Khatunganj & China Rates */}
         <MarketTicker
           selectedCurrency={selectedCurrency}
           onSelectCommodityForQuote={handleSelectCommodityForQuote}
         />
 
-        {/* 4. Core Commodity Showcase (Focus on Yellow Split Peas & Chickpeas) */}
+        {/* 4. Core Commodity Showcase (Focus on Yellow Split Peas, Chickpeas, Chinese Kidney Beans) */}
         <CommodityShowcase
           selectedCurrency={selectedCurrency}
           onSelectCommodityForQuote={handleSelectCommodityForQuote}
           onOpenSpecModal={() => setIsCatalogOpen(true)}
         />
 
-        {/* 5. Interactive Bulk Quote & Landed CIF/FOB Calculator */}
+        {/* 5. Interactive Bulk Quote & Landed CIF/FOB Calculator in BDT */}
         <BulkQuoteCalculator
           selectedCurrency={selectedCurrency}
           preSelectedCommodity={calcSelectedCommodity}
           onLockInQuote={handleLockInQuote}
         />
 
-        {/* 6. Interactive Global Trade Route Map */}
+        {/* 6. Khatunganj Wholesale & Mill Delivery Bonded Warehouse Showcase */}
+        <div id="warehouse">
+          <KhatunganjWarehouse
+            onOpenRFQ={() => setIsRFQOpen(true)}
+          />
+        </div>
+
+        {/* 7. Interactive China-Bangladesh Global Trade Route Map */}
         <TradeRouteMap
           onSelectRouteForQuote={handleSelectRouteForQuote}
         />
 
-        {/* 7. Live Bulk Shipment & Ocean Vessel Radar */}
+        {/* 8. Live Bulk Shipment & Ocean Vessel Radar (Chittagong & Mongla) */}
         <ShipmentTracker />
 
-        {/* 8. Supply Chain Journey & SGS / Quality Assurance */}
+        {/* 9. Supply Chain Journey & SGS / Quarantine Quality Assurance */}
         <QualityAssurance />
 
       </main>
 
-      {/* 9. Global Corporate Footer */}
+      {/* 10. Global Corporate Footer */}
       <Footer
         onOpenRFQ={() => setIsRFQOpen(true)}
         onOpenCatalog={() => setIsCatalogOpen(true)}
       />
 
-      {/* 10. Multi-Step RFQ & Formal Proforma Modal */}
+      {/* 11. Multi-Step RFQ & Formal Proforma Modal */}
       <RFQModal
         isOpen={isRFQOpen}
         onClose={() => setIsRFQOpen(false)}
@@ -131,13 +139,13 @@ export default function App() {
         selectedCurrency={selectedCurrency}
       />
 
-      {/* 11. Technical Specifications & 2026 Crop Catalog Modal */}
+      {/* 12. Technical Specifications & 2026 Crop Catalog Modal */}
       <CatalogModal
         isOpen={isCatalogOpen}
         onClose={() => setIsCatalogOpen(false)}
       />
 
-      {/* 12. Floating WhatsApp Trade Desk Quick Action */}
+      {/* 13. Floating WhatsApp Trade Desk Quick Action */}
       <FloatingWhatsApp
         onOpenRFQ={() => setIsRFQOpen(true)}
       />

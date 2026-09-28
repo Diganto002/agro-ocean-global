@@ -32,25 +32,25 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-agro-gold-500/10 border border-agro-gold-500/30 text-agro-gold-400 text-xs font-bold uppercase tracking-widest mb-3">
-              <Compass className="w-3.5 h-3.5 animate-spin-slow" />
-              <span>Global Supply Lines</span>
+              <Compass className="w-3.5 h-3.5" />
+              <span>চীন ও আঞ্চলিক সমুদ্র করিডোর</span>
             </div>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
-              Interactive Global <span className="text-agro-gold-400">Trade Route Map</span>
+              ইন্টারঅ্যাক্টিভ <span className="text-agro-gold-400">ট্রেড রুট ম্যাপ</span>
             </h2>
             <p className="text-slate-400 text-sm sm:text-base max-w-2xl mt-2">
-              Pulsating ocean corridors directly linking North American, Australasian, and South Asian farmgate origins to Chittagong Port Authority (CPA) and Mongla Port.
+              চীন (গুয়াংজু, শেনজেন, কিংদাও) থেকে ৮০%+ বাল্ক খাদ্যপণ্য সরাসরি চট্টগ্রাম ও মোংলা বন্দরে পৌঁছানোর পালসেটিং সামুদ্রিক করিডোর এবং প্রতিবেশী ভারত ও মিয়ানমার রুট।
             </p>
           </div>
 
           <div className="mt-4 md:mt-0 flex items-center gap-3">
             <span className="flex items-center gap-1.5 text-xs text-slate-300 bg-agro-navy-900 px-3 py-1.5 rounded-lg border border-slate-800">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping-slow"></span>
-              <span>4 Active Sea Lanes</span>
+              <span>৮০%+ চীন করিডোর সক্রিয়</span>
             </span>
             <span className="flex items-center gap-1.5 text-xs text-slate-300 bg-agro-navy-900 px-3 py-1.5 rounded-lg border border-slate-800">
               <Ship className="w-3.5 h-3.5 text-cyan-400" />
-              <span>Real-Time Ocean Telemetry</span>
+              <span>লাইভ ওশান টেলিমেট্রি</span>
             </span>
           </div>
         </div>
@@ -64,15 +64,15 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
             {/* Map Top Status Bar */}
             <div className="flex flex-wrap items-center justify-between gap-2 pb-4 mb-4 border-b border-slate-800 text-xs">
               <div className="flex items-center gap-2">
-                <span className="font-mono text-agro-gold-400 font-bold">ROUTE MONITOR:</span>
-                <span className="text-slate-300 font-medium">Click any port node or animated corridor</span>
+                <span className="font-mono text-agro-gold-400 font-bold">রুট মনিটর:</span>
+                <span className="text-slate-300 font-medium">যেকোনো বন্দর নোডে ক্লিক করে বিবরণ দেখুন</span>
               </div>
               <div className="flex items-center gap-4 text-slate-400">
                 <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-agro-gold-400 inline-block" /> Origin Ports
+                  <span className="w-2 h-2 rounded-full bg-agro-gold-400 inline-block" /> চীন ও আমদানি পোর্ট
                 </span>
                 <span className="flex items-center gap-1">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" /> Destination Terminals (BD)
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" /> বাংলাদেশের বন্দর (CPA/মোংলা)
                 </span>
               </div>
             </div>
@@ -80,7 +80,6 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
             {/* SVG Interactive Canvas */}
             <div className="relative w-full aspect-[16/9] bg-[#050811] rounded-2xl border border-slate-800/80 overflow-hidden shadow-inner flex items-center justify-center">
               
-              {/* Subtle World Map Silhouette Vector Background */}
               <svg 
                 viewBox="0 0 800 450" 
                 className="w-full h-full select-none"
@@ -101,16 +100,6 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                       <feMergeNode in="SourceGraphic" />
                     </feMerge>
                   </filter>
-
-                  {/* Gradient definitions for sea corridors */}
-                  <linearGradient id="grad-canada" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#E0A96D" />
-                    <stop offset="100%" stopColor="#52B788" />
-                  </linearGradient>
-                  <linearGradient id="grad-aus" x1="0%" y1="100%" x2="0%" y2="0%">
-                    <stop offset="0%" stopColor="#52B788" />
-                    <stop offset="100%" stopColor="#38BDF8" />
-                  </linearGradient>
                 </defs>
 
                 {/* Ocean Grid Lines */}
@@ -124,32 +113,32 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                   <line x1="600" y1="0" x2="600" y2="450" />
                 </g>
 
-                {/* Stylized Continents Outlines */}
-                {/* North America */}
+                {/* China & East Asia Landmass Silhouette */}
                 <path 
-                  d="M 120 70 Q 180 80, 240 100 Q 220 180, 160 210 Q 120 160, 100 110 Z" 
+                  d="M 600 80 Q 720 90, 750 170 Q 710 240, 630 250 Q 590 190, 600 80 Z" 
+                  fill="rgba(30, 41, 59, 0.45)" 
+                  stroke="rgba(224, 169, 109, 0.3)" 
+                  strokeWidth="1.2"
+                />
+                <text x="680" y="115" fill="rgba(224, 169, 109, 0.6)" fontSize="13" fontWeight="bold" fontFamily="sans-serif">
+                  চীন (CHINA - ৮০%)
+                </text>
+
+                {/* South Asia (Bangladesh & India) Landmass */}
+                <path 
+                  d="M 500 170 Q 560 170, 590 200 Q 580 260, 540 260 Q 510 210, 500 170 Z" 
+                  fill="rgba(30, 41, 59, 0.55)" 
+                  stroke="rgba(74, 222, 128, 0.4)" 
+                  strokeWidth="1.2"
+                />
+                <text x="505" y="245" fill="rgba(74, 222, 128, 0.7)" fontSize="11" fontWeight="bold">
+                  বাংলাদেশ
+                </text>
+
+                {/* Southeast Asia & Myanmar */}
+                <path 
+                  d="M 590 210 Q 640 220, 630 310 Q 600 320, 580 260 Z" 
                   fill="rgba(30, 41, 59, 0.4)" 
-                  stroke="rgba(71, 85, 105, 0.4)" 
-                  strokeWidth="1"
-                />
-                {/* South Asia & India */}
-                <path 
-                  d="M 500 170 Q 560 170, 600 200 Q 580 260, 540 260 Q 510 210, 500 170 Z" 
-                  fill="rgba(30, 41, 59, 0.5)" 
-                  stroke="rgba(71, 85, 105, 0.4)" 
-                  strokeWidth="1"
-                />
-                {/* Australia */}
-                <path 
-                  d="M 660 300 Q 750 310, 760 380 Q 690 410, 650 360 Z" 
-                  fill="rgba(30, 41, 59, 0.4)" 
-                  stroke="rgba(71, 85, 105, 0.4)" 
-                  strokeWidth="1"
-                />
-                {/* Europe & Middle East */}
-                <path 
-                  d="M 400 110 Q 480 120, 480 180 Q 430 200, 390 160 Z" 
-                  fill="rgba(30, 41, 59, 0.3)" 
                   stroke="rgba(71, 85, 105, 0.3)" 
                   strokeWidth="1"
                 />
@@ -159,16 +148,14 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                   const isSelected = selectedRoute.id === route.id;
                   return (
                     <g key={route.id} className="cursor-pointer" onClick={() => setSelectedRoute(route)}>
-                      {/* Underlying Glow path */}
                       <path
                         d={route.pathD}
                         fill="none"
                         stroke={route.color}
-                        strokeWidth={isSelected ? 4 : 2}
-                        strokeOpacity={isSelected ? 0.8 : 0.3}
+                        strokeWidth={isSelected ? 4 : 2.5}
+                        strokeOpacity={isSelected ? 0.85 : 0.35}
                         filter="url(#glow-gold)"
                       />
-                      {/* Animated dashed sea lane */}
                       <path
                         d={route.pathD}
                         fill="none"
@@ -180,26 +167,21 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                   );
                 })}
 
-                {/* Moving Vessel Simulators along Route Paths */}
-                {/* Vessel 1 on Canada -> CTG */}
-                <circle cx="370" cy="115" r="4.5" fill="#E0A96D" filter="url(#glow-gold)">
+                {/* Moving Ship Simulator 1 on China Guangzhou -> Chittagong */}
+                <circle cx="612" cy="208" r="4.5" fill="#E0A96D" filter="url(#glow-gold)">
                   <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
                 </circle>
-                <text x="382" y="112" fill="#E0A96D" fontSize="10" fontWeight="bold" fontFamily="monospace">
-                  🚢 54k MT Canadian Peas
+                <text x="618" y="202" fill="#E0A96D" fontSize="10" fontWeight="bold">
+                  🚢 ৪৮.৫k MT চীন এক্সপ্রেস
                 </text>
 
-                {/* Vessel 2 on Australia -> CTG */}
-                <circle cx="640" cy="275" r="4.5" fill="#52B788" filter="url(#glow-emerald)">
-                  <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+                {/* Moving Ship Simulator 2 on Kolkata -> Mongla */}
+                <circle cx="558" cy="210" r="4" fill="#52B788" filter="url(#glow-emerald)">
+                  <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite" />
                 </circle>
-                <text x="652" y="278" fill="#52B788" fontSize="10" fontWeight="bold" fontFamily="monospace">
-                  🚢 42k MT Desi Chickpeas
-                </text>
 
-                {/* 2. ORIGIN HUBS NODES */}
+                {/* 2. ORIGIN HUBS (China, India, Myanmar) */}
                 {tradeHubs.origins.map((hub) => {
-                  const isHovered = hoveredEntity === hub.id;
                   return (
                     <g 
                       key={hub.id} 
@@ -208,7 +190,6 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                       onMouseEnter={() => setHoveredEntity(hub.id)}
                       onMouseLeave={() => setHoveredEntity(null)}
                     >
-                      {/* Pulse ring */}
                       <circle 
                         cx={hub.coords.x} 
                         cy={hub.coords.y} 
@@ -216,7 +197,6 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                         fill="rgba(224, 169, 109, 0.15)"
                         className="animate-ping-slow"
                       />
-                      {/* Outer border */}
                       <circle 
                         cx={hub.coords.x} 
                         cy={hub.coords.y} 
@@ -225,14 +205,12 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                         stroke="#E0A96D" 
                         strokeWidth="2.5" 
                       />
-                      {/* Inner gold core */}
                       <circle 
                         cx={hub.coords.x} 
                         cy={hub.coords.y} 
                         r="3.5" 
                         fill="#E0A96D" 
                       />
-                      {/* Hub Label */}
                       <text 
                         x={hub.coords.x} 
                         y={hub.coords.y - 12} 
@@ -242,13 +220,13 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                         textAnchor="middle"
                         className="pointer-events-none drop-shadow-md"
                       >
-                        {hub.name}
+                        {hub.name.split('/')[0]}
                       </text>
                     </g>
                   );
                 })}
 
-                {/* 3. DESTINATION HUBS (Chittagong & Mongla) */}
+                {/* 3. BANGLADESH PORTS (Chittagong CPA, Mongla, Benapole) */}
                 {tradeHubs.destinations.map((dest) => {
                   const isActive = activeHub.id === dest.id;
                   return (
@@ -259,40 +237,36 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                       onMouseEnter={() => setHoveredEntity(dest.id)}
                       onMouseLeave={() => setHoveredEntity(null)}
                     >
-                      {/* Large beacon pulse */}
                       <circle 
                         cx={dest.coords.x} 
                         cy={dest.coords.y} 
-                        r={isActive ? 22 : 16} 
-                        fill="rgba(45, 106, 79, 0.25)"
+                        r={isActive ? 20 : 14} 
+                        fill="rgba(45, 106, 79, 0.3)"
                         className="animate-ping"
                       />
-                      {/* Outer boundary */}
                       <circle 
                         cx={dest.coords.x} 
                         cy={dest.coords.y} 
-                        r="9" 
+                        r="8" 
                         fill="#0B132B"
                         stroke="#2D6A4F" 
                         strokeWidth="3" 
                       />
-                      {/* Core beacon */}
                       <circle 
                         cx={dest.coords.x} 
                         cy={dest.coords.y} 
-                        r="4.5" 
+                        r="4" 
                         fill="#4ADE80" 
                       />
-                      {/* Destination Label */}
                       <text 
-                        x={dest.coords.x + 14} 
-                        y={dest.coords.y + 4} 
+                        x={dest.coords.x - 10} 
+                        y={dest.coords.y + 18} 
                         fill="#4ADE80" 
-                        fontSize="12" 
+                        fontSize="11" 
                         fontWeight="900"
                         className="pointer-events-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.9)]"
                       >
-                        ⚓ {dest.name.split(' ')[0]}
+                        ⚓ {dest.name.split('(')[0]}
                       </text>
                     </g>
                   );
@@ -304,7 +278,7 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-agro-navy-950/90 backdrop-blur-md px-3 py-2 rounded-xl border border-slate-800 text-[11px]">
                 <div className="flex items-center gap-1.5 text-slate-300">
                   <Activity className="w-3.5 h-3.5 text-agro-gold-400" />
-                  <span>Click hub for terminal draft & port facilities:</span>
+                  <span>বন্দর ও টার্মিনাল সিলেক্ট করুন:</span>
                 </div>
                 <div className="flex items-center gap-2 overflow-x-auto">
                   {tradeHubs.destinations.map(d => (
@@ -330,7 +304,7 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                           : 'bg-slate-900/80 text-slate-400 hover:text-white'
                       }`}
                     >
-                      {o.country}
+                      {o.country.split('(')[0]}
                     </button>
                   ))}
                 </div>
@@ -348,7 +322,7 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
               <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
                 <div className="flex items-center gap-2">
                   <div className={`p-2 rounded-xl ${
-                    activeHub.type.includes('Primary') || activeHub.type.includes('Secondary')
+                    activeHub.type.includes('প্রধান')
                       ? 'bg-emerald-500/20 text-emerald-400'
                       : 'bg-agro-gold-500/20 text-agro-gold-400'
                   }`}>
@@ -373,33 +347,33 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                 
                 {activeHub.primaryCargo && (
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                    <p className="text-slate-400 text-[11px] mb-0.5">Primary Cargo Dispatched:</p>
+                    <p className="text-slate-400 text-[11px] mb-0.5">প্রধান আমদানিকৃত খাদ্যপণ্য:</p>
                     <p className="font-semibold text-agro-gold-300">{activeHub.primaryCargo}</p>
                   </div>
                 )}
 
                 {activeHub.facilities && (
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                    <p className="text-slate-400 text-[11px] mb-0.5">Port Facilities & Unloading:</p>
+                    <p className="text-slate-400 text-[11px] mb-0.5">বন্দর সুবিধা ও ডেলিভারি কানেক্টিভিটি:</p>
                     <p className="font-medium text-slate-200">{activeHub.facilities}</p>
                   </div>
                 )}
 
                 <div className="grid grid-cols-2 gap-2">
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                    <p className="text-slate-400 text-[10px]">Max Berth Draft</p>
-                    <p className="font-bold text-cyan-300 font-mono">{activeHub.berthDraft || 'Deep Sea Transmit'}</p>
+                    <p className="text-slate-400 text-[10px]">বার্থ ড্রাফট</p>
+                    <p className="font-bold text-cyan-300 font-mono">{activeHub.berthDraft || 'গভীর সমুদ্র'}</p>
                   </div>
                   <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80">
-                    <p className="text-slate-400 text-[10px]">Clearance Time</p>
+                    <p className="text-slate-400 text-[10px]">ট্রানজিট সময়</p>
                     <p className="font-bold text-emerald-400 font-mono">{activeHub.clearanceTime || activeHub.transitDaysToBD}</p>
                   </div>
                 </div>
 
                 <div className="p-2.5 rounded-xl bg-slate-950/60 border border-slate-800/80 flex items-center justify-between">
                   <div>
-                    <p className="text-slate-400 text-[10px]">Inspection Authority</p>
-                    <p className="font-semibold text-slate-200">{activeHub.inspectionDesk || 'SGS & Chittagong Port Health'}</p>
+                    <p className="text-slate-400 text-[10px]">কোয়ালিটি ও ফাইটোস্যানিটারি ডেস্ক</p>
+                    <p className="font-semibold text-slate-200">{activeHub.inspectionDesk}</p>
                   </div>
                   <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
                 </div>
@@ -409,7 +383,7 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                     onClick={() => onSelectRouteForQuote && onSelectRouteForQuote(activeHub.name)}
                     className="w-full py-2.5 rounded-xl bg-agro-gold-500 hover:bg-agro-gold-400 text-agro-navy-950 font-bold text-xs shadow-lg transition-all flex items-center justify-center gap-2"
                   >
-                    <span>Inquire Capacity for This Port</span>
+                    <span>এই রুটের ভলিউম ও বুকিং জানুন</span>
                     <ChevronRight className="w-4 h-4" />
                   </button>
                 </div>
@@ -422,7 +396,7 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
             <div className="p-5 rounded-3xl bg-slate-900/60 border border-slate-800 text-xs">
               <div className="flex items-center justify-between mb-2">
                 <span className="font-bold text-agro-gold-400 uppercase tracking-wider text-[10px]">
-                  Active Shipping Corridor
+                  সক্রিয় শিপিং করিডোর
                 </span>
                 <span className="font-mono text-cyan-400 font-semibold">{selectedRoute.transitTime}</span>
               </div>
@@ -430,10 +404,10 @@ export default function TradeRouteMap({ onSelectRouteForQuote }) {
                 {selectedRoute.origin} → {selectedRoute.destination}
               </p>
               <p className="text-slate-400 mb-3">
-                Bulk Cargo: {selectedRoute.commodity} ({selectedRoute.vesselCount})
+                পণ্য: {selectedRoute.commodity} ({selectedRoute.vesselCount})
               </p>
               <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-gradient-to-r from-agro-gold-500 to-emerald-400 h-full w-3/4 rounded-full" />
+                <div className="bg-gradient-to-r from-agro-gold-500 to-emerald-400 h-full w-4/5 rounded-full" />
               </div>
             </div>
 
